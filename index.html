@@ -188,27 +188,25 @@
   .cheat-head .eyebrow{font-size:7.5pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:block;margin-bottom:5px;}
   .cheat-head h2{font-size:23pt;}
   .cheat-head .pin{font-size:9pt;color:var(--grey);margin-top:5px;font-weight:600;letter-spacing:.04em;}
-  .cheat-grid{flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,1fr);gap:10px;}
-  .cbox{border-radius:11px;padding:12px 15px;border:1.5px solid var(--line);background:#fff;display:flex;flex-direction:column;}
-  .cbox .ch{display:flex;align-items:center;gap:8px;margin-bottom:8px;}
+  .cheat-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(2,1fr);gap:10px;}
+  .cbox{border-radius:11px;padding:14px 17px;border:1.5px solid var(--line);background:#fff;display:flex;flex-direction:column;}
+  .cbox .ch{display:flex;align-items:center;gap:8px;margin-bottom:9px;}
   .cbox .ch .dot{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;}
   .cbox .ch .dot svg{width:11px;height:11px;}
   .cbox .ch h3{font-size:11.5pt;white-space:nowrap;}
   .cbox .dot{background:var(--sage);}
-  .cbox.say .dot,.cbox.prevent .dot{background:var(--terra);}
-  .cbox.worse .dot,.cbox.trig .dot{background:var(--grey);}
-  .cbox ol{list-style:none;counter-reset:c;display:flex;flex-direction:column;gap:4px;}
-  .cbox ol li{counter-increment:c;position:relative;padding-left:20px;font-size:9.3pt;line-height:1.3;color:var(--ink);}
+  .cbox.say .dot{background:var(--terra);}
+  .cbox.worse .dot{background:var(--grey);}
+  .cbox ol{list-style:none;counter-reset:c;display:flex;flex-direction:column;gap:8px;}
+  .cbox ol li{counter-increment:c;position:relative;padding-left:22px;font-size:10pt;line-height:1.4;color:var(--ink);}
   .cbox ol li::before{content:counter(c);position:absolute;left:0;top:.5px;width:14px;height:14px;border-radius:50%;background:var(--sage);color:#fff;font-size:7pt;font-weight:700;display:flex;align-items:center;justify-content:center;}
-  .cbox.say ul{list-style:none;display:flex;flex-direction:column;gap:5px;}
-  .cbox.say ul li{font-family:var(--serif);font-size:10pt;font-style:italic;color:var(--ink);line-height:1.22;}
-  .cbox ul.dotlist{list-style:none;display:flex;flex-direction:column;gap:4px;}
-  .cbox ul.dotlist li{font-size:9.3pt;line-height:1.3;color:var(--ink);padding-left:13px;position:relative;}
-  .cbox ul.dotlist li::before{content:"";position:absolute;left:0;top:.52em;width:5px;height:5px;border-radius:50%;background:var(--sage);}
-  .cbox.say ul.dotlist li::before,.cbox.prevent ul.dotlist li::before{background:var(--terra);}
-  .cbox.worse ul.dotlist li::before,.cbox.trig ul.dotlist li::before{background:var(--grey);}
-  .cbox ul.reflect{list-style:none;display:flex;flex-direction:column;gap:7px;background:none;border-radius:0;padding:0;}
-  .cbox ul.reflect li{font-family:var(--serif);font-size:10.3pt;font-style:italic;line-height:1.32;color:var(--ink-soft);}
+  .cbox.say ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+  .cbox.say ul li{font-family:var(--serif);font-size:10.5pt;font-style:italic;color:var(--ink);line-height:1.35;}
+  .cbox ul.dotlist{list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .cbox ul.dotlist li{font-size:10pt;line-height:1.4;color:var(--ink);padding-left:14px;position:relative;}
+  .cbox ul.dotlist li::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--sage);}
+  .cbox.say ul.dotlist li::before{background:var(--terra);}
+  .cbox.worse ul.dotlist li::before{background:var(--grey);}
   .cheat-foot{margin-top:10px;text-align:center;border-top:1px solid var(--line);padding-top:10px;}
   .cheat-foot .ph{font-family:var(--serif);font-size:13pt;font-style:italic;color:var(--sage-deep);margin-bottom:4px;}
   .cheat-foot .bn{font-size:7.5pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);}
@@ -652,63 +650,47 @@
         <div class="cbox moment">
           <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></div><h3>Respond</h3></div>
           <ol>
-            <li>Take a breath.</li>
-            <li>Get close.</li>
-            <li>Stay calm.</li>
-            <li>Keep your words short.</li>
-            <li>Give it time.</li>
+            <li>Stop and take a deep breath before you respond.</li>
+            <li>Get down low and move in close to them.</li>
+            <li>Keep your own voice and body calm.</li>
+            <li>Use short, simple words — they can't process much right now.</li>
+            <li>Give the feeling time to move through them.</li>
           </ol>
         </div>
         <div class="cbox say">
           <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-4 3v-3H4z"/></svg></div><h3>What to say</h3></div>
           <ul>
-            <li>"You're safe."</li>
-            <li>"I'm here."</li>
-            <li>"I know you're upset."</li>
-            <li>"I know that was disappointing."</li>
-            <li>"I'm not going anywhere."</li>
+            <li>"You're safe. I'm right here with you."</li>
+            <li>"I know you're upset, and that's okay."</li>
+            <li>"I know that was really disappointing."</li>
+            <li>"I'm not going anywhere — I've got you."</li>
           </ul>
         </div>
         <div class="cbox worse">
           <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M7 7l10 10"/></svg></div><h3>What to avoid</h3></div>
           <ul class="dotlist">
-            <li>Arguing</li>
-            <li>Lecturing</li>
-            <li>Threats</li>
-            <li>Punishments in the moment</li>
-            <li>Asking too many questions</li>
+            <li>Arguing or trying to reason with them mid-meltdown.</li>
+            <li>Lecturing them while they're still upset.</li>
+            <li>Making threats you don't intend to follow through on.</li>
+            <li>Punishing them for a feeling they can't control yet.</li>
+            <li>Asking a lot of questions before they've calmed down.</li>
           </ul>
         </div>
         <div class="cbox after">
           <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></div><h3>Afterward</h3></div>
           <ul class="dotlist">
-            <li>Reconnect first.</li>
-            <li>Reflect later.</li>
-            <li>Repair if needed.</li>
-            <li>No shame for the meltdown itself.</li>
-            <li>Move forward.</li>
+            <li>Reconnect with them before you do anything else.</li>
+            <li>Save the reflecting and talking for once everyone is calm.</li>
+            <li>Repair the moment together if you need to.</li>
+            <li>There's no shame in the meltdown itself.</li>
+            <li>Move forward without dwelling on it.</li>
           </ul>
         </div>
-        <div class="cbox prevent">
-          <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20c4-1 7-4 7-9V5l-7-2-7 2v6c0 5 3 8 7 9z"/></svg></div><h3>Prevention</h3></div>
-          <ul class="dotlist">
-            <li>Protect sleep and meals.</li>
-            <li>Give transition warnings.</li>
-            <li>Offer small choices.</li>
-            <li>Build in downtime.</li>
-            <li>Keep expectations realistic.</li>
-          </ul>
-        </div>
-        <div class="cbox trig">
-          <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6z"/></svg></div><h3>Remember</h3></div>
-          <ul class="reflect">
-            <li>Meltdowns are normal.</li>
-            <li>The feeling is bigger than their ability to handle it.</li>
-            <li>Big feelings take time and practice to manage.</li>
-            <li>You're not failing them.</li>
-            <li>This phase will pass.</li>
-          </ul>
-        </div>
+      </div>
+
+      <div class="callout" style="margin-top:14px;">
+        <span class="co-lab">Remember</span>
+        <p>Meltdowns are normal, and the feeling is bigger than their ability to handle it right now. You're not failing them — this phase will pass.</p>
       </div>
 
       <div class="cheat-foot">
