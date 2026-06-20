@@ -210,6 +210,8 @@
   .cbox ul.dotlist{list-style:none;display:flex;flex-direction:column;gap:4px;}
   .cbox ul.dotlist li{font-size:9.3pt;line-height:1.3;color:var(--ink);padding-left:13px;position:relative;}
   .cbox ul.dotlist li::before{content:"";position:absolute;left:0;top:.52em;width:5px;height:5px;border-radius:50%;background:var(--terra);}
+  .cbox ul.quote{list-style:none;display:flex;flex-direction:column;gap:7px;}
+  .cbox ul.quote li{font-family:var(--serif);font-size:10.3pt;font-style:italic;line-height:1.32;color:var(--ink-soft);}
   .cbox.worse ul.dotlist li::before{background:var(--grey);}
   .cbox.after ul.dotlist li::before{background:var(--sage);}
   .cbox.prevent ul.dotlist li::before{background:var(--sage);}
@@ -654,63 +656,66 @@
 
       <div class="cheat-grid">
         <div class="cbox trig">
-          <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 8v4l3 2"/></svg></div><h3>Common triggers</h3></div>
-          <ul class="dotlist">
-            <li>Hungry or tired (check this first)</li>
-            <li>Overstimulated</li>
-            <li>Sudden transition</li>
-            <li>Loss of control</li>
+          <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6z"/></svg></div><h3>Remember</h3></div>
+          <ul class="quote">
+            <li>Meltdowns are normal.</li>
+            <li>The feeling is bigger than their ability to handle it.</li>
+            <li>Big feelings take time and practice to manage.</li>
           </ul>
         </div>
         <div class="cbox worse">
-          <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M7 7l10 10"/></svg></div><h3>Makes it worse</h3></div>
+          <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M7 7l10 10"/></svg></div><h3>What to avoid</h3></div>
           <ul class="dotlist">
-            <li>Reasoning — they can't access logic</li>
-            <li>Raising your voice — escalates</li>
-            <li>Bribing — teaches it gets results</li>
-            <li>Dismissing the feeling</li>
+            <li>Arguing</li>
+            <li>Lecturing</li>
+            <li>Threats</li>
+            <li>Punishments in the moment</li>
+            <li>Asking too many questions</li>
           </ul>
         </div>
         <div class="cbox moment">
-          <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></div><h3>What to do</h3></div>
+          <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></div><h3>Respond</h3></div>
           <ol>
-            <li>Breathe first — your calm is the tool</li>
-            <li>Get down to their level</li>
-            <li>Name the feeling out loud</li>
-            <li>Stay close, keep words short</li>
-            <li>Wait for the wave to pass</li>
+            <li>Take a breath.</li>
+            <li>Get close.</li>
+            <li>Stay calm.</li>
+            <li>Keep your words short.</li>
+            <li>Give it time.</li>
           </ol>
         </div>
         <div class="cbox say">
           <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-4 3v-3H4z"/></svg></div><h3>What to say</h3></div>
           <ul>
-            <li>"I'm right here."</li>
-            <li>"It's okay to feel upset."</li>
             <li>"You're safe."</li>
-            <li>"I've got you."</li>
+            <li>"I'm here."</li>
+            <li>"I know you're upset."</li>
+            <li>"I know that was disappointing."</li>
+            <li>"I'm not going anywhere."</li>
           </ul>
         </div>
         <div class="cbox after">
-          <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></div><h3>After the meltdown</h3></div>
+          <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></div><h3>Afterward</h3></div>
           <ul class="dotlist">
-            <li>Reconnect before you reflect</li>
-            <li>Keep it short and calm</li>
-            <li>No shame for the meltdown itself</li>
+            <li>Reconnect first.</li>
+            <li>Reflect later.</li>
+            <li>Repair if needed.</li>
+            <li>Move forward.</li>
           </ul>
         </div>
         <div class="cbox prevent">
           <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20c4-1 7-4 7-9V5l-7-2-7 2v6c0 5 3 8 7 9z"/></svg></div><h3>Prevention</h3></div>
           <ul class="dotlist">
-            <li>Protect sleep and meals</li>
-            <li>Give 5-minute transition warnings</li>
-            <li>Offer small choices</li>
-            <li>Build in quiet time after busy days</li>
+            <li>Protect sleep and meals.</li>
+            <li>Give transition warnings.</li>
+            <li>Offer small choices.</li>
+            <li>Build in downtime.</li>
+            <li>Keep expectations realistic.</li>
           </ul>
         </div>
       </div>
 
       <div class="cheat-foot">
-        <div class="ph">"Connect before you correct."</div>
+        <div class="ph">"Reconnect. Repair. Move forward."</div>
         <div class="bn">Digital Guide Vault · The Toddler Meltdown Field Guide</div>
       </div>
     </div>
