@@ -148,15 +148,15 @@
   /* ============ COVER ============ */
   .cover{background:var(--paper);}
   .cover .arc-top{position:absolute;top:0;left:0;right:0;height:2.1in;background:radial-gradient(120% 100% at 50% 0,var(--sage-tint) 0,var(--paper) 72%);}
-  .cover-in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:0.9in 0.9in 0.8in;}
+  .cover-in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:0.9in 0.9in 0.8in;}
   .cover .eyebrow{font-size:8.5pt;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);}
   .cover .ribbon{display:flex;align-items:center;gap:12px;white-space:nowrap;}
   .cover .ribbon .ln{width:34px;height:1px;background:var(--terra);opacity:.5;}
-  .cover-content{display:flex;flex-direction:column;align-items:center;gap:0.22in;}
-  .cover-hero img{width:4.9in;height:2.05in;object-fit:cover;object-position:50% 60%;border-radius:18px;display:block;box-shadow:0 12px 30px rgba(60,52,40,.16);}
+  .cover-content{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.3in;}
+  .cover-hero img{width:5.3in;height:2.5in;object-fit:cover;object-position:50% 60%;border-radius:18px;display:block;box-shadow:0 12px 30px rgba(60,52,40,.16);}
   .cover-body{display:flex;flex-direction:column;align-items:center;gap:14px;}
-  .cover h1{font-family:"Playfair Display",var(--serif);font-size:46pt;line-height:1.02;font-weight:700;letter-spacing:-.01em;text-align:center;}
-  .cover h1 em{font-style:italic;color:var(--terra);}
+  .cover h1{font-family:"Playfair Display",var(--serif);font-size:46pt;line-height:1.05;font-weight:700;letter-spacing:-.01em;text-align:center;}
+  .cover h1 em{font-style:italic;color:var(--terra);font-size:0.6em;display:block;margin-top:6px;}
   .cover .sub{font-size:13pt;line-height:1.55;color:var(--ink-soft);max-width:5in;font-weight:500;margin:0;text-align:center;}
   .cover-foot{display:flex;justify-content:space-between;align-items:center;width:100%;}
   .cover-foot .bn{font-family:var(--serif);font-size:13pt;font-weight:700;color:var(--ink);}
