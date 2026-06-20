@@ -76,6 +76,11 @@
   .dot-rule::before,.dot-rule::after{content:"";flex:1;height:1px;background:var(--line);}
   .dot-rule .d{width:6px;height:6px;border-radius:50%;background:var(--terra);flex:none;}
 
+  /* ---- mini section header: LABEL ———— ---- */
+  .mini-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .mini-head span:first-child{font-size:7.5pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-deep);white-space:nowrap;}
+  .mini-head .ln{flex:1;height:1px;background:var(--line);}
+
   /* ---- bullets ---- */
   ul.bullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
   ul.bullets li{position:relative;padding-left:22px;font-size:11pt;line-height:1.55;color:var(--ink-soft);}
@@ -305,14 +310,14 @@
       <h2 class="page-title">Why toddlers melt down</h2>
       <p class="page-sub">It's not bad behaviour — it's biology.</p>
 
-      <p style="margin-bottom:16px;">One minute your child is happily eating a snack. The next they're crying because the biscuit broke in half. To adults, that reaction can seem completely out of proportion. To toddlers, it feels very real. If you've ever wondered how a child can go from calm to inconsolable in seconds, the answer has a lot to do with how a toddler's brain develops.</p>
+      <p style="margin-bottom:20px;">One minute your child is happily eating a snack. The next they're crying because the biscuit broke in half. To adults, that reaction can seem completely out of proportion. To toddlers, it feels very real. If you've ever wondered how a child can go from calm to inconsolable in seconds, the answer has a lot to do with how a toddler's brain develops.</p>
 
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:13px;">
-        <span style="font-size:7.5pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-deep);white-space:nowrap;">Two parts of your child's brain explain most meltdowns</span>
-        <span style="flex:1;height:1px;background:var(--line);"></span>
+      <div class="mini-head">
+        <span>Two parts of your child's brain explain most meltdowns</span>
+        <span class="ln"></span>
       </div>
 
-      <div class="grid2" style="margin-bottom:16px;">
+      <div class="grid2" style="margin-bottom:20px;">
         <div class="card">
           <span class="tag">The emotional brain</span>
           <h3>Feelings &amp; instinct</h3>
@@ -327,21 +332,21 @@
         </div>
       </div>
 
-      <p style="margin-bottom:16px;">When something upsets your toddler, the emotional brain reacts instantly — before the thinking brain is developed enough to step in and help them reason it through. That's why a small frustration, like a broken biscuit, can trigger a reaction big enough to look like a crisis.</p>
+      <p style="margin-bottom:20px;">When something upsets your toddler, the emotional brain reacts instantly — before the thinking brain is developed enough to step in and help them reason it through. That's why a small frustration, like a broken biscuit, can trigger a reaction big enough to look like a crisis.</p>
 
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px;">
-        <span style="font-size:7.5pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-deep);white-space:nowrap;">What this means for you</span>
-        <span style="flex:1;height:1px;background:var(--line);"></span>
+      <div class="mini-head">
+        <span>What this means for you</span>
+        <span class="ln"></span>
       </div>
 
-      <ul class="bullets" style="margin-bottom:0;gap:11px;">
+      <ul class="bullets" style="margin-bottom:0;">
         <li><b>They're not being manipulative.</b> A meltdown is an overwhelmed brain, not a strategy.</li>
         <li><b>They genuinely can't reason in that moment.</b> The thinking part of the brain isn't fully available.</li>
         <li><b>They can't calm down alone.</b> Self-regulation develops over time and they need your help to get there.</li>
         <li><b>Your calm matters.</b> Children take their cues from the adults around them.</li>
       </ul>
 
-      <div class="dot-rule" style="margin-top:16px;"><span class="d"></span></div>
+      <div class="dot-rule" style="margin-top:20px;"><span class="d"></span></div>
       <p style="font-family:var(--serif);font-size:13pt;font-style:italic;text-align:center;color:var(--ink);line-height:1.45;">They're not giving you a hard time. <span style="color:var(--terra);">They're having a hard time.</span></p>
     </div>
     <div class="foot">
