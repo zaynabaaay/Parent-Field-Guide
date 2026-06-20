@@ -164,8 +164,9 @@
   .cover h1 em{font-style:italic;color:var(--terra);font-size:0.6em;display:block;margin-top:6px;}
   .cover .sub{font-size:13pt;line-height:1.55;color:var(--ink-soft);max-width:5in;font-weight:500;margin:0;text-align:center;}
   .cover-foot{display:flex;justify-content:space-between;align-items:center;width:100%;}
-  .cover-foot .bn{font-family:var(--sans);font-size:7.5pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);}
-  .cover-foot .num{font-family:var(--serif);font-size:9.5pt;color:var(--grey);}
+  .cover-foot .bn{display:flex;align-items:center;gap:9px;font-family:var(--sans);font-size:8.5pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);}
+  .cover-foot .bn .dot{width:9px;height:9px;border-radius:50%;background:var(--terra);flex:none;}
+  .cover-foot .num{font-family:var(--serif);font-size:11pt;font-style:italic;color:var(--ink-soft);}
 
   /* ============ WELCOME ============ */
   .welcome .big-q{font-family:var(--serif);font-size:25pt;line-height:1.12;font-weight:700;color:var(--ink);margin-bottom:14px;}
@@ -250,11 +251,11 @@
         <div class="cover-hero">
           <img id="dgv-cover" src="uploads/cover-hug.png" alt="Parent and toddler hugging">
         </div>
-        <p class="sub">A calm, practical guide for parents who are doing their best.</p>
+        <p class="sub">A practical guide to understanding, responding to, and preventing toddler meltdowns.</p>
       </div>
 
       <div class="cover-foot">
-        <div class="bn">Parent Field Guide</div>
+        <div class="bn"><span class="dot"></span>Parent Field Guide</div>
         <div class="num">Field Guide Nº 04</div>
       </div>
     </div>
