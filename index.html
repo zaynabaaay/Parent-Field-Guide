@@ -123,12 +123,10 @@
   .wrow .why p{color:var(--ink-soft);}
 
   /* ---- scripts ---- */
-  .scripts{display:flex;flex-direction:column;gap:26px;}
-  .sgroup .glab{display:flex;align-items:center;gap:10px;margin-bottom:6px;}
-  .sgroup .glab span{font-size:10.5pt;font-weight:700;letter-spacing:0;text-transform:none;color:var(--terra);white-space:nowrap;}
-  .sgroup .glab .ln{flex:1;height:1px;background:var(--line);}
-  .quote-line{font-family:var(--serif);font-size:11.5pt;font-style:italic;color:var(--ink);line-height:1.55;}
-  .quote-line .qd{display:inline-block;color:var(--terra);font-style:normal;margin:0 8px;}
+  .say-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line);}
+  .say-cell{padding:14px 20px 16px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .say-cell .lab{font-size:8.5pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);line-height:1.35;margin-bottom:9px;}
+  .say-cell .quote-line{display:block;font-family:var(--serif);font-size:10.5pt;font-style:italic;color:var(--ink);line-height:1.6;}
   .quotes{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
   .quote{background:var(--terra-tint);border-radius:10px;padding:10px 14px;font-family:var(--serif);font-size:11pt;line-height:1.28;color:var(--terra-deep);font-style:italic;}
   .quote.full{grid-column:1/-1;}
@@ -477,32 +475,53 @@
 
       <p style="margin-bottom:14px;">When a child is upset, it's easy to worry about saying the wrong thing. Your tone matters more than the exact words you choose.</p>
 
-      <div class="scripts" style="gap:18px;">
-        <div class="sgroup">
-          <div class="glab" style="margin-bottom:8px;"><span>When they're starting to get upset</span><span class="ln"></span></div>
-          <p class="quote-line">"I can see you're getting frustrated."<span class="qd">·</span>"This feels really hard right now."<span class="qd">·</span>"I'm right here."</p>
+      <div class="say-grid">
+        <div class="say-cell">
+          <div class="lab">When they're starting to get upset</div>
+          <span class="quote-line">"I can see you're getting frustrated."</span>
+          <span class="quote-line">"This feels really hard right now."</span>
+          <span class="quote-line">"I'm right here."</span>
         </div>
-        <div class="sgroup">
-          <div class="glab" style="margin-bottom:8px;"><span>When you've said no</span><span class="ln"></span></div>
-          <p class="quote-line">"I know you really wanted that."<span class="qd">·</span>"It's hard when the answer is no."<span class="qd">·</span>"It's okay to feel upset."</p>
+        <div class="say-cell">
+          <div class="lab">When you've said no</div>
+          <span class="quote-line">"I know you really wanted that."</span>
+          <span class="quote-line">"It's hard when the answer is no."</span>
+          <span class="quote-line">"It's okay to feel upset."</span>
         </div>
-        <div class="sgroup">
-          <div class="glab" style="margin-bottom:8px;"><span>When they're in full meltdown</span><span class="ln"></span></div>
-          <p class="quote-line">"You're safe."<span class="qd">·</span>"I'm here."<span class="qd">·</span>"I've got you."<span class="qd">·</span>"I'm not going anywhere."</p>
+        <div class="say-cell">
+          <div class="lab">When they're in full meltdown</div>
+          <span class="quote-line">"You're safe."</span>
+          <span class="quote-line">"I'm here."</span>
+          <span class="quote-line">"I've got you."</span>
+          <span class="quote-line">"I'm not going anywhere."</span>
         </div>
-        <div class="sgroup">
-          <div class="glab" style="margin-bottom:8px;"><span>When they're calming down</span><span class="ln"></span></div>
-          <p class="quote-line">"That was a lot."<span class="qd">·</span>"You're okay."<span class="qd">·</span>"Come here."</p>
+        <div class="say-cell">
+          <div class="lab">If they've hit or hurt you</div>
+          <span class="quote-line">"I won't let you hurt me."</span>
+          <span class="quote-line">"I'm moving back for a moment."</span>
+          <span class="quote-line">"I'm still here."</span>
         </div>
-        <div class="sgroup">
-          <div class="glab" style="margin-bottom:8px;"><span>If they've hit or hurt you</span><span class="ln"></span></div>
-          <p class="quote-line">"I won't let you hurt me. I'm still here."<span class="qd">·</span>"Hitting hurts. I'm moving away for a moment."</p>
+        <div class="say-cell">
+          <div class="lab">When they're calming down</div>
+          <span class="quote-line">"That was a lot."</span>
+          <span class="quote-line">"You're okay."</span>
+          <span class="quote-line">"Come here."</span>
+        </div>
+        <div class="say-cell">
+          <div class="lab">When it's time to transition</div>
+          <span class="quote-line">"I know it's hard to stop."</span>
+          <span class="quote-line">"Five more minutes, then we go."</span>
+          <span class="quote-line">"I'll help you find a stopping point."</span>
         </div>
       </div>
 
       <div class="callout" style="margin-top:20px;">
         <span class="co-lab" style="color:var(--sage-deep);">A helpful thing to remember</span>
         <p>Save the conversation for later, when they're calm enough to listen. Addressing hitting during a meltdown won't get through — the thinking brain isn't available. Wait until things are calm, then keep it short and simple.</p>
+      </div>
+
+      <div class="figband" style="margin-top:18px;height:1.4in;">
+        <image-slot id="dgv-say" shape="rounded" radius="10" style="height:1.4in;width:100%" placeholder="Drop a photo — a parent speaking calmly at the child's eye level"></image-slot>
       </div>
 
     </div>
