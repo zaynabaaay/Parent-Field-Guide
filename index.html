@@ -102,6 +102,12 @@
   .callout .co-lab{display:block;font-family:var(--sans);font-weight:700;font-size:8pt;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-deep);margin-bottom:7px;}
   .callout p{font-family:var(--serif);font-size:12pt;line-height:1.5;color:var(--ink);font-style:italic;}
 
+  /* ---- moment layout (text + side image) ---- */
+  .moment-layout{display:flex;gap:0.3in;align-items:stretch;}
+  .moment-text{flex:1;min-width:0;}
+  .moment-image{flex:none;width:2.15in;}
+  .moment-image image-slot{width:100%;height:100%;display:block;}
+
   /* ---- steps ---- */
   .steps{display:flex;flex-direction:column;gap:15px;}
   .step{display:flex;gap:13px;align-items:flex-start;}
@@ -435,24 +441,28 @@
       <h2 class="page-title">What to do in the moment</h2>
       <p class="page-sub">When emotions are running high, keep it simple.</p>
 
-      <div class="figband" style="margin-bottom:16px;">
-        <image-slot id="dgv-moment" shape="rounded" radius="10" style="height:1.25in" src="uploads/EA732B5B-E24F-4ED1-A041-11E96C69DF36.PNG" placeholder="Drop a photo — parent kneeling down to the child's level"></image-slot>
-      </div>
+      <div class="moment-layout">
+        <div class="moment-text">
+          <p style="margin-bottom:20px;">You don't need the perfect words or a perfect response. Your job is to help your child get through the moment safely.</p>
 
-      <p style="margin-bottom:20px;">You don't need the perfect words or a perfect response. Your job is to help your child get through the moment safely.</p>
+          <div class="steps">
+            <div class="step"><div class="n">1</div><div class="b"><h3>Take a breath first</h3><p>You can't help your child through a big feeling while you're caught up in one too. Take one slow breath first.</p></div></div>
+            <div class="step"><div class="n">2</div><div class="b"><h3>Get close and stay calm</h3><p>Get down to their level and speak quietly. Children's nervous systems take cues from ours — your calm signals safety.</p></div></div>
+            <div class="step"><div class="n">3</div><div class="b"><h3>Name what you see</h3><p>Keep it simple — you don't need to solve the problem, just acknowledge what happened. <span class="ex">"You wanted to keep playing." "You're really upset."</span></p></div></div>
+            <div class="step"><div class="n">4</div><div class="b"><h3>Offer comfort</h3><p>Some children want a hug, some want space — follow their lead. Sometimes a hand on their back or sitting quietly beside them is enough.</p></div></div>
+            <div class="step"><div class="n">5</div><div class="b"><h3>Keep your words short</h3><p>A meltdown is not the time for explanations. Simple is better: <span class="ex">"I'm here." "You're safe." "I've got you."</span></p></div></div>
+            <div class="step"><div class="n">6</div><div class="b"><h3>Give it time</h3><p>Meltdowns end, and you don't need to rush them. Sometimes the most helpful thing you can do is stay nearby and wait.</p></div></div>
+          </div>
 
-      <div class="steps">
-        <div class="step"><div class="n">1</div><div class="b"><h3>Take a breath first</h3><p>You can't help your child through a big feeling while you're caught up in one too. Take one slow breath first.</p></div></div>
-        <div class="step"><div class="n">2</div><div class="b"><h3>Get close and stay calm</h3><p>Get down to their level and speak quietly. Children's nervous systems take cues from ours — your calm signals safety.</p></div></div>
-        <div class="step"><div class="n">3</div><div class="b"><h3>Name what you see</h3><p>Keep it simple — you don't need to solve the problem, just acknowledge what happened. <span class="ex">"You wanted to keep playing." "You're really upset."</span></p></div></div>
-        <div class="step"><div class="n">4</div><div class="b"><h3>Offer comfort</h3><p>Some children want a hug, some want space — follow their lead. Sometimes a hand on their back or sitting quietly beside them is enough.</p></div></div>
-        <div class="step"><div class="n">5</div><div class="b"><h3>Keep your words short</h3><p>A meltdown is not the time for explanations. Simple is better: <span class="ex">"I'm here." "You're safe." "I've got you."</span></p></div></div>
-        <div class="step"><div class="n">6</div><div class="b"><h3>Give it time</h3><p>Meltdowns end, and you don't need to rush them. Sometimes the most helpful thing you can do is stay nearby and wait.</p></div></div>
-      </div>
+          <div class="callout" style="margin-top:14px;">
+            <span class="co-lab" style="color:var(--sage-deep);">A helpful thing to remember</span>
+            <p>You don't have to fix the feeling. You just have to be there while it passes.</p>
+          </div>
+        </div>
 
-      <div class="callout" style="margin-top:14px;">
-        <span class="co-lab" style="color:var(--sage-deep);">A helpful thing to remember</span>
-        <p>You don't have to fix the feeling. You just have to be there while it passes.</p>
+        <div class="moment-image figband">
+          <image-slot id="dgv-moment" shape="rounded" radius="10" style="width:100%;height:100%" placeholder="Drop a photo — parent standing, taking a deep breath"></image-slot>
+        </div>
       </div>
     </div>
     <div class="foot">
