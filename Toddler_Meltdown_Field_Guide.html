@@ -209,23 +209,11 @@
   .cheat-foot .ph{font-family:var(--serif);font-size:13pt;font-style:italic;color:var(--sage-deep);margin-bottom:4px;}
   .cheat-foot .bn{font-size:7.5pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);}
 
-  /* ---- print button ---- */
-  #printbtn{
-    position:fixed;right:24px;bottom:24px;z-index:50;
-    background:var(--terra);color:#fff;border:0;border-radius:30px;
-    font-family:var(--sans);font-size:13px;font-weight:600;letter-spacing:.02em;
-    padding:13px 22px;cursor:pointer;box-shadow:0 8px 22px rgba(184,92,56,.35);
-    display:flex;align-items:center;gap:9px;transition:transform .15s,box-shadow .15s;
-  }
-  #printbtn:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(184,92,56,.45);}
-  #printbtn svg{width:17px;height:17px;}
-
   /* ============ PRINT ============ */
   @page{size:letter;margin:0;}
   @media print{
     html,body{background:#fff;padding:0;}
     #pages{transform:none!important;width:8.5in;}
-    #printbtn{display:none;}
     .sheet{margin:0;box-shadow:none;page-break-after:always;break-after:page;}
     .sheet:last-child{page-break-after:auto;}
   }
@@ -706,11 +694,6 @@
 
 </div>
 </div>
-
-<button id="printbtn" onclick="window.print()">
-  <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9V3h12v6M6 18H4a1 1 0 0 1-1-1v-5a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v5a1 1 0 0 1-1 1h-2M6 14h12v7H6z"/></svg>
-  Print / Save as PDF
-</button>
 
 <script src="image-slot.js"></script>
 <script>
