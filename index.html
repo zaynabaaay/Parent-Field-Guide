@@ -69,9 +69,6 @@
   .page-title{font-size:36pt;line-height:1.06;margin-bottom:9px;}
   .page-sub{font-family:var(--serif);font-size:12.5pt;font-style:italic;color:var(--terra);margin-bottom:12px;}
 
-  /* hairline rule */
-  .rule{height:1px;background:var(--line);border:0;margin:0 0 18px;}
-
   /* dot-centered divider */
   .dot-rule{display:flex;align-items:center;gap:10px;margin:16px 0;}
   .dot-rule::before,.dot-rule::after{content:"";flex:1;height:1px;background:var(--line);}
@@ -99,7 +96,6 @@
 
   /* ---- callout ---- */
   .callout{border-radius:12px;padding:18px 22px;background:var(--neutral-tint);}
-  .callout.terra{background:var(--terra-tint);}
   .callout .co-lab{display:block;font-family:var(--sans);font-weight:700;font-size:8pt;letter-spacing:.16em;text-transform:uppercase;color:var(--terra-deep);margin-bottom:7px;}
   .callout p{font-family:var(--serif);font-size:12pt;line-height:1.5;color:var(--ink);font-style:italic;}
 
@@ -107,7 +103,6 @@
   .moment-layout{display:flex;gap:0.3in;align-items:stretch;}
   .moment-text{flex:1;min-width:0;}
   .moment-image{flex:none;width:2.15in;}
-  .moment-image image-slot{width:100%;height:100%;display:block;}
 
   /* ---- steps ---- */
   .steps{display:flex;flex-direction:column;gap:15px;}
@@ -117,27 +112,11 @@
   .step .b p{font-size:11pt;line-height:1.45;}
   .step .b p .ex{color:var(--terra-deep);font-style:italic;}
 
-  /* ---- worse rows ---- */
-  .worse{display:flex;flex-direction:column;gap:10px;}
-  .wrow{display:grid;grid-template-columns:.85fr 1.15fr;border:1px solid #EAD2C4;border-radius:10px;overflow:hidden;background:#fff;}
-  .wrow .react{padding:14px 18px;border-right:1px solid #EAD2C4;background:var(--terra-tint);}
-  .wrow .why{padding:14px 18px;background:var(--paper-2);}
-  .wrow .lab{font-size:7pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px;}
-  .wrow .react .lab{color:var(--terra);}
-  .wrow .why .lab{color:var(--sage-deep);}
-  .wrow p{font-size:10.5pt;line-height:1.45;color:var(--ink);}
-  .wrow .react p b{font-weight:700;}
-  .wrow .why p{color:var(--ink-soft);}
-
   /* ---- scripts ---- */
   .say-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line);}
   .say-cell{padding:14px 20px 16px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
   .say-cell .lab{font-size:8.5pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);line-height:1.35;margin-bottom:9px;}
   .say-cell .quote-line{display:block;font-family:var(--serif);font-size:10.5pt;font-style:italic;color:var(--ink);line-height:1.6;}
-  .quotes{display:grid;grid-template-columns:1fr 1fr;gap:7px;}
-  .quote{background:var(--terra-tint);border-radius:10px;padding:10px 14px;font-family:var(--serif);font-size:11pt;line-height:1.28;color:var(--terra-deep);font-style:italic;}
-  .quote.full{grid-column:1/-1;}
-  .sgroup .note{font-size:9pt;color:var(--grey);margin-top:7px;font-style:italic;}
 
   /* ---- footer ---- */
   .foot{position:absolute;left:0.82in;right:0.82in;bottom:0.4in;display:flex;align-items:center;gap:12px;}
@@ -147,9 +126,6 @@
 
   /* ---- image treatment ---- */
   .figband{display:block;border:1.5px dashed var(--line);border-radius:12px;overflow:hidden;}
-  .figband image-slot{width:100%;display:block;}
-  .figcap{font-size:8pt;color:var(--grey);font-style:italic;margin-top:6px;display:flex;align-items:center;gap:6px;}
-  .figcap::before{content:"";width:12px;height:1px;background:var(--terra);opacity:.6;}
 
   /* ============ COVER ============ */
   .cover{background:var(--paper);}
@@ -178,9 +154,6 @@
   .use-box li{position:relative;padding-left:27px;font-size:10.5pt;line-height:1.5;color:var(--ink-soft);}
   .use-box li b{color:var(--ink);font-weight:700;}
   .use-box li svg{position:absolute;left:0;top:1px;width:18px;height:18px;}
-
-  /* ============ FINAL WORD ============ */
-  .final .pad{align-items:center;text-align:center;}
 
   /* ============ CHEAT SHEET ============ */
   .cheat .pad{inset:0.48in 0.6in 0.44in;}
@@ -691,7 +664,6 @@
 </div>
 </div>
 
-<script src="image-slot.js"></script>
 <script>
   (function(){
     var pages = document.getElementById('pages');
