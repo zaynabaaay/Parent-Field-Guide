@@ -180,9 +180,10 @@
   .cbox ul.dotlist li::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--sage);}
   .cbox.say ul.dotlist li::before{background:var(--terra);}
   .cbox.avoid ul.dotlist li::before{background:var(--grey);}
-  .cheat-foot{margin-top:24px;text-align:center;}
-  .cheat-foot .ph{font-family:var(--serif);font-size:13pt;font-style:italic;color:var(--sage-deep);margin-bottom:4px;}
-  .cheat-foot .bn{font-size:7.5pt;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grey);}
+  .cheat-foot{margin-top:32px;display:flex;justify-content:space-between;align-items:center;width:100%;padding-top:18px;border-top:1px solid var(--line);}
+  .cheat-foot .bn{display:flex;align-items:center;gap:9px;font-family:var(--sans);font-size:7.5pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);}
+  .cheat-foot .bn .dot{width:8px;height:8px;border-radius:50%;background:var(--terra);flex:none;}
+  .cheat-foot .title{font-size:7.5pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);}
 
   /* ============ PRINT ============ */
   @page{size:letter;margin:0;}
@@ -653,11 +654,11 @@
 
       <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
         <div class="dot-rule" style="margin:0 0 28px;"><span class="d"></span></div>
-        <p style="font-family:var(--serif);font-size:13pt;font-style:italic;text-align:center;color:var(--ink);line-height:1.45;">You don't need the perfect words. <span style="color:var(--terra);">Your calm presence matters most.</span></p>
+        <p style="font-family:var(--serif);font-size:13pt;font-style:italic;text-align:center;color:var(--ink);line-height:1.55;max-width:5.5in;margin:0 auto;">Meltdowns will still happen. You'll have moments where you don't get it right. That's not failure, that's parenting. What makes the difference is knowing what to do next, and doing it again. You just need to keep showing up.</p>
 
         <div class="cheat-foot">
-          <div class="ph">"Reconnect. Repair. Move forward."</div>
-          <div class="bn">Digital Guide Vault · The Toddler Meltdown Field Guide</div>
+          <div class="bn"><span class="dot"></span>Parent Field Guide</div>
+          <div class="title">The Toddler Meltdown Field Guide</div>
         </div>
       </div>
     </div>
