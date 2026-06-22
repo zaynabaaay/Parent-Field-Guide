@@ -15,7 +15,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at 18% 12%, #f3efe6 0%, #e7e0d2 45%, #ddd4c2 100%);
+  background: #efe9dd;
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(0,0,0,0.15);
 }
@@ -23,7 +23,9 @@ body {
 .light-sweep {
   position: absolute;
   inset: 0;
-  background: linear-gradient(125deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.15) 30%, rgba(255,255,255,0) 55%);
+  background:
+    linear-gradient(124deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 28%),
+    linear-gradient(124deg, transparent 58%, rgba(255,255,255,0.18) 65%, transparent 74%);
   pointer-events: none;
   z-index: 5;
 }
@@ -33,54 +35,64 @@ body {
   position: relative;
   width: 0;
   height: 0;
+  perspective: 900px;
+}
+
+.ground-shadow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 320px;
+  height: 50px;
+  transform: translate(-50%, 100px);
+  background: radial-gradient(ellipse at center, rgba(70,55,35,0.32) 0%, rgba(70,55,35,0) 75%);
+  z-index: 0;
 }
 
 .book {
   position: absolute;
-  bottom: 0;
-  width: 150px;
-  height: 220px;
-  border-radius: 3px 6px 6px 3px;
-  box-shadow: 4px 10px 25px rgba(60, 50, 35, 0.35);
+  top: 50%;
+  left: 50%;
+  width: 140px;
+  height: 250px;
+  border-radius: 2px 7px 7px 2px;
+  box-shadow: 2px 6px 14px rgba(60, 50, 35, 0.22);
+  transform-style: preserve-3d;
 }
 
 .book .cover {
   position: absolute;
   inset: 0;
-  border-radius: 3px 6px 6px 3px;
-  background-color: #ece7dc;
-  background-image: var(--cover, none);
+  border-radius: 2px 7px 7px 2px;
+  background-color: #efe9dd;
+  background-image:
+    linear-gradient(100deg, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 18%, rgba(255,255,255,0.5) 50%, rgba(0,0,0,0) 82%, rgba(0,0,0,0.06) 100%),
+    var(--cover, none);
   background-size: cover;
   background-position: center;
 }
 
 .spine-highlight {
   position: absolute;
-  top: 6%;
-  bottom: 6%;
-  left: 10px;
-  width: 3px;
-  background: rgba(255,255,255,0.55);
+  top: 4%;
+  bottom: 4%;
+  left: 16px;
+  width: 6px;
+  background: linear-gradient(90deg, rgba(0,0,0,0.12) 0%, rgba(255,255,255,0.6) 50%, rgba(0,0,0,0.08) 100%);
   border-radius: 2px;
 }
 
 .book-left {
-  left: -195px;
-  bottom: -110px;
-  transform: rotate(-16deg);
+  transform: translate(-50%, -50%) translate(-115px, 12px) rotateY(18deg) rotate(-12deg);
   z-index: 1;
 }
 
 .book-center {
-  left: -75px;
-  bottom: -96px;
-  transform: rotate(0deg);
+  transform: translate(-50%, -50%) rotate(0deg);
   z-index: 3;
 }
 
 .book-right {
-  left: 45px;
-  bottom: -112px;
-  transform: rotate(13deg) skewY(3deg);
+  transform: translate(-50%, -50%) translate(115px, 14px) rotateY(-16deg) rotate(10deg);
   z-index: 2;
 }
