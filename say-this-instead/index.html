@@ -17,6 +17,7 @@
     --grey-line:#D8CFBE;
     --sage:#8A9A7C;
     --sage-deep:#5F6E50;
+    --sage-tint:#EEF1E9;
     --terra:#B8533A;
     --terra-deep:#9E3D22;
     --stage:#E6DFD3;
@@ -88,7 +89,7 @@
 
   /* ==================== COVER ==================== */
   .cover .frame{
-    inset:0.72in 0.85in 0.65in;
+    inset:0.62in 0.85in 0;
     display:flex; flex-direction:column; align-items:center;
   }
   .cover-brandbar{ justify-content:space-between; width:100%; }
@@ -97,39 +98,88 @@
   .cover-content{
     flex:1; width:100%; min-height:0;
     display:flex; flex-direction:column; align-items:center;
-    justify-content:center; gap:0.3in;
+    justify-content:center; gap:0.22in;
+    padding-bottom:0.75in;
   }
 
-  .cover-hero{ position:relative; }
-  .cover-hero img{
-    width:5.8in; height:3.5in; object-fit:cover;
-    border-radius:14px; display:block;
-    box-shadow:0 30px 50px -10px rgba(43,34,24,0.32), 0 10px 20px rgba(43,34,24,0.14);
+  .cover-eyebrow{ text-align:center; }
+  .cover-eyebrow .e-top{
+    font-family:"Fraunces",serif; font-style:italic; font-weight:400;
+    font-size:13px; color:var(--terra-deep); margin-bottom:5px;
   }
-
-  .series-label{
-    display:flex; align-items:center; gap:14px; margin-top:0;
-  }
-  .note-callout{ margin-top:18px; margin-bottom:0; }
-  .series-label::before,.series-label::after{
-    content:""; height:1px; background:var(--grey-line); flex:1;
-  }
-  .series-label span{
+  .cover-eyebrow .e-bottom{
     font-family:"Mulish",sans-serif; font-weight:700;
-    font-size:9.5px; letter-spacing:0.22em; text-transform:uppercase;
-    color:var(--terra); white-space:nowrap;
+    font-size:9.5px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--grey);
   }
+  .cover-eyebrow .e-bottom .sep{ color:var(--terra); margin:0 6px; }
 
   .cover h1{
     font-family:"Fraunces",serif; font-weight:700;
-    font-size:70px; line-height:0.95; letter-spacing:-0.02em;
-    color:var(--ink); text-align:center; margin:0;
+    font-size:62px; line-height:0.95; letter-spacing:-0.02em;
+    color:var(--sage-deep); text-align:center; margin:0;
   }
+  .cover h1 em{ color:var(--terra-deep); font-style:italic; }
 
   .cover-sub{
-    font-family:"Fraunces",serif; font-style:italic; font-weight:400;
-    font-size:20px; color:var(--grey); text-align:center;
-    margin:0; line-height:1.35; max-width:5in;
+    font-family:"Mulish",sans-serif; font-weight:700;
+    font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--ink-soft); text-align:center;
+    margin:0; max-width:5in;
+  }
+
+  .cover-hero{ position:relative; margin-top:4px; }
+  .cover-hero img{
+    width:5in; height:2.95in; object-fit:cover;
+    border-radius:14px; display:block;
+    box-shadow:0 30px 50px -10px rgba(43,34,24,0.32), 0 10px 20px rgba(43,34,24,0.14);
+  }
+  .cover-badge{
+    position:absolute; top:-0.3in; left:-0.32in;
+    width:1.35in; height:1.35in; border-radius:50%;
+    background:var(--paper); border:1.5px solid var(--grey-line);
+    display:flex; align-items:center; justify-content:center;
+    text-align:center; padding:0.12in;
+    box-shadow:0 12px 24px rgba(43,34,24,0.12);
+  }
+  .cover-badge .b-top{
+    font-family:"Mulish",sans-serif; font-weight:800;
+    font-size:9.5px; letter-spacing:0.06em; text-transform:uppercase;
+    color:var(--terra-deep); line-height:1.25;
+  }
+  .cover-badge .b-bottom{
+    font-family:"Fraunces",serif; font-style:italic; font-size:10.5px;
+    color:var(--ink-soft); margin-top:3px; line-height:1.2;
+  }
+
+  .cover-features{
+    display:grid; grid-template-columns:1fr 1fr 1fr;
+    gap:18px; width:100%; max-width:6in; margin-top:6px;
+  }
+  .cover-feature{ text-align:center; padding:0 6px; }
+  .cover-feature .f-icon{
+    width:30px; height:30px; border-radius:50%;
+    background:var(--sage-tint); margin:0 auto 8px;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .cover-feature .f-label{
+    font-family:"Mulish",sans-serif; font-weight:700;
+    font-size:10.5px; letter-spacing:0.02em; color:var(--ink);
+    margin-bottom:3px;
+  }
+  .cover-feature .f-text{
+    font-size:9.5px; line-height:1.4; color:var(--grey);
+  }
+
+  .cover-bottombar{
+    position:absolute; left:0; right:0; bottom:0;
+    height:0.62in; background:var(--sage-deep);
+    display:flex; align-items:center; justify-content:center;
+  }
+  .cover-bottombar span{
+    font-family:"Mulish",sans-serif; font-weight:700;
+    font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase;
+    color:#FBF8F2;
   }
 
   /* ==================== NOTE PAGE ==================== */
@@ -322,17 +372,52 @@
       </div>
 
       <div class="cover-content">
-        <div class="series-label"><span>The Calm Parenting Series</span></div>
+        <div class="cover-eyebrow">
+          <p class="e-top">A Gentle Parenting Guide To</p>
+          <p class="e-bottom">Stronger Connections <span class="sep">•</span> Calmer Moments <span class="sep">•</span> Confident Kids</p>
+        </div>
 
-        <h1>Say This<br>Instead</h1>
+        <h1>Say This<br><em>Instead</em></h1>
+
+        <p class="cover-sub">Simple Words. Powerful Connections.</p>
 
         <div class="cover-hero">
+          <div class="cover-badge">
+            <div>
+              <div class="b-top">Practical Phrases</div>
+              <div class="b-bottom">for Everyday Parenting</div>
+            </div>
+          </div>
           <img src="assets/parent-child-connection.png" alt="A parent crouched to their child's eye level">
         </div>
 
-        <p class="cover-sub">10 phrase swaps for calmer, more connected parenting.</p>
+        <div class="cover-features">
+          <div class="cover-feature">
+            <div class="f-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5F6E50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7.5-4.9-10-9.3C.4 8.2 2 4.5 5.6 4 8 3.7 10 5 12 7.5 14 5 16 3.7 18.4 4 22 4.5 23.6 8.2 22 11.7 19.5 16.1 12 21 12 21z"/></svg>
+            </div>
+            <div class="f-label">Build Trust</div>
+            <div class="f-text">through connection</div>
+          </div>
+          <div class="cover-feature">
+            <div class="f-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5F6E50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"/><path d="M5.5 19.5c0-3.3 2.9-5.5 6.5-5.5s6.5 2.2 6.5 5.5"/></svg>
+            </div>
+            <div class="f-label">Guide Behavior</div>
+            <div class="f-text">with kindness</div>
+          </div>
+          <div class="cover-feature">
+            <div class="f-icon">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#5F6E50" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7"/></svg>
+            </div>
+            <div class="f-label">Raise Confident Kids</div>
+            <div class="f-text">who feel seen and heard</div>
+          </div>
+        </div>
       </div>
     </div>
+
+    <div class="cover-bottombar"><span>Words That Support. Connections That Grow.</span></div>
   </section>
 
   <!-- ============== PAGE 2 — NOTE TO PARENT ============== -->
