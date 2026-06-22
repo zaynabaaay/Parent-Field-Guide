@@ -87,22 +87,29 @@
   .foot-rule{ flex:1; height:1px; background:var(--grey-line); }
 
   /* ==================== COVER ==================== */
-  .cover .frame{ inset:0.72in 0.85in 0.65in; }
-  .cover-brandbar{ justify-content:space-between; }
+  .cover .frame{
+    inset:0.72in 0.85in 0.65in;
+    display:flex; flex-direction:column; align-items:center;
+  }
+  .cover-brandbar{ justify-content:space-between; width:100%; }
   .cover-brand-left{ display:flex; align-items:center; gap:10px; }
 
-  .cover-img-wrap{
-    flex:1; min-height:0; margin-top:24px;
-    border-radius:10px; overflow:hidden;
+  .cover-content{
+    flex:1; width:100%; min-height:0;
+    display:flex; flex-direction:column; align-items:center;
+    justify-content:center; gap:0.3in;
   }
-  .cover-img-wrap img{
-    width:100%; height:100%; object-fit:cover; display:block;
+
+  .cover-hero{ position:relative; }
+  .cover-hero img{
+    width:5.8in; height:3.5in; object-fit:cover;
+    border-radius:14px; display:block;
+    box-shadow:0 30px 50px -10px rgba(43,34,24,0.32), 0 10px 20px rgba(43,34,24,0.14);
   }
 
   .series-label{
     display:flex; align-items:center; gap:14px; margin-top:0;
   }
-  .cover .series-label{ margin-top:22px; }
   .note-callout{ margin-top:18px; margin-bottom:0; }
   .series-label::before,.series-label::after{
     content:""; height:1px; background:var(--grey-line); flex:1;
@@ -116,16 +123,14 @@
   .cover h1{
     font-family:"Fraunces",serif; font-weight:700;
     font-size:70px; line-height:0.95; letter-spacing:-0.02em;
-    color:var(--ink); text-align:center; margin-top:16px;
+    color:var(--ink); text-align:center; margin:0;
   }
 
   .cover-sub{
     font-family:"Fraunces",serif; font-style:italic; font-weight:400;
     font-size:20px; color:var(--grey); text-align:center;
-    margin-top:12px; line-height:1.35;
+    margin:0; line-height:1.35; max-width:5in;
   }
-
-  .cover .divider{ margin-top:22px; }
 
   /* ==================== NOTE PAGE ==================== */
   .note-heading{
@@ -149,12 +154,6 @@
   .note-body p:last-child{ margin-bottom:0; }
   .note-body b{ color:var(--ink); font-weight:700; }
 
-
-  .cover-by{
-    text-align:center; font-family:"Mulish",sans-serif;
-    font-size:13px; font-weight:400; color:var(--ink-soft); margin-top:14px;
-  }
-  .cover-by strong{ color:var(--terra); font-weight:600; }
 
   /* ==================== INNER PAGES ==================== */
   .pagehead{
@@ -322,19 +321,17 @@
         <span class="guide-num">Field Guide Nº 02</span>
       </div>
 
-      <div class="cover-img-wrap">
-        <img src="assets/parent-child-connection.png" alt="A parent crouched to their child's eye level">
+      <div class="cover-content">
+        <div class="series-label"><span>The Calm Parenting Series</span></div>
+
+        <h1>Say This<br>Instead</h1>
+
+        <div class="cover-hero">
+          <img src="assets/parent-child-connection.png" alt="A parent crouched to their child's eye level">
+        </div>
+
+        <p class="cover-sub">10 phrase swaps for calmer, more connected parenting.</p>
       </div>
-
-      <div class="series-label"><span>The Calm Parenting Series</span></div>
-
-      <h1>Say This<br>Instead</h1>
-
-      <p class="cover-sub">10 phrase swaps for calmer, more connected parenting.</p>
-
-      <div class="divider"><span class="dot"></span></div>
-
-      <p class="cover-by">A guide by <strong>Parent Field Guide</strong></p>
     </div>
   </section>
 
