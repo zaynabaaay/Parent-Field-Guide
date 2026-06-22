@@ -6,7 +6,7 @@
 <title>Say This Instead — Parent Field Guide</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Mulish:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,900;1,400;1,500;1,600;1,700&family=Jost:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
   :root{
     --paper:#FBF8F2;
@@ -26,7 +26,7 @@
   *{ box-sizing:border-box; margin:0; padding:0; }
   html,body{ background:var(--stage); }
   body{
-    font-family:"Mulish",system-ui,sans-serif;
+    font-family:"Jost",system-ui,sans-serif;
     color:var(--ink-soft);
     -webkit-font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
@@ -56,13 +56,13 @@
     background:var(--terra); flex:none;
   }
   .brand-name{
-    font-family:"Mulish",sans-serif; font-weight:700;
+    font-family:"Jost",sans-serif; font-weight:700;
     letter-spacing:0.22em; text-transform:uppercase;
     font-size:10.5px; color:var(--ink-soft); white-space:nowrap;
   }
   .bar-rule{ flex:1; height:1px; background:var(--grey-line); }
   .guide-num{
-    font-family:"Fraunces",serif; font-style:italic;
+    font-family:"Playfair Display",serif; font-style:italic;
     font-size:13px; color:var(--grey); white-space:nowrap;
   }
 
@@ -81,7 +81,7 @@
     margin-top:auto;
     display:flex; align-items:center; gap:12px;
     padding-top:8px; border-top:1px solid var(--grey-line);
-    font-family:"Mulish",sans-serif; font-weight:700;
+    font-family:"Jost",sans-serif; font-weight:700;
     font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase;
     color:var(--grey);
   }
@@ -104,25 +104,25 @@
 
   .cover-eyebrow{ text-align:center; }
   .cover-eyebrow .e-top{
-    font-family:"Fraunces",serif; font-style:italic; font-weight:400;
+    font-family:"Playfair Display",serif; font-style:italic; font-weight:400;
     font-size:13px; color:var(--terra-deep); margin-bottom:5px;
   }
   .cover-eyebrow .e-bottom{
-    font-family:"Mulish",sans-serif; font-weight:700;
+    font-family:"Jost",sans-serif; font-weight:700;
     font-size:9.5px; letter-spacing:0.16em; text-transform:uppercase;
     color:var(--grey);
   }
   .cover-eyebrow .e-bottom .sep{ color:var(--terra); margin:0 6px; }
 
   .cover h1{
-    font-family:"Fraunces",serif; font-weight:700;
+    font-family:"Playfair Display",serif; font-weight:700;
     font-size:62px; line-height:0.95; letter-spacing:-0.02em;
     color:var(--sage-deep); text-align:center; margin:0;
   }
   .cover h1 em{ color:var(--terra-deep); font-style:italic; }
 
   .cover-sub{
-    font-family:"Mulish",sans-serif; font-weight:700;
+    font-family:"Jost",sans-serif; font-weight:700;
     font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
     color:var(--ink-soft); text-align:center;
     margin:0; max-width:5in;
@@ -135,21 +135,23 @@
     box-shadow:0 30px 50px -10px rgba(43,34,24,0.32), 0 10px 20px rgba(43,34,24,0.14);
   }
   .cover-badge{
-    position:absolute; top:-0.3in; left:-0.32in;
-    width:1.35in; height:1.35in; border-radius:50%;
-    background:var(--paper); border:1.5px solid var(--grey-line);
+    position:absolute; top:-0.32in; left:-0.34in;
+    width:1.3in; height:1.3in; border-radius:50%;
+    background:var(--paper); border:1px solid var(--grey-line);
     display:flex; align-items:center; justify-content:center;
-    text-align:center; padding:0.12in;
+    text-align:center; padding:0.14in;
     box-shadow:0 12px 24px rgba(43,34,24,0.12);
+    transform:rotate(-8deg);
   }
+  .cover-badge .b-inner{ transform:rotate(8deg); }
   .cover-badge .b-top{
-    font-family:"Mulish",sans-serif; font-weight:800;
-    font-size:9.5px; letter-spacing:0.06em; text-transform:uppercase;
-    color:var(--terra-deep); line-height:1.25;
+    font-family:"Jost",sans-serif; font-weight:600;
+    font-size:9px; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--terra-deep); line-height:1.3;
   }
   .cover-badge .b-bottom{
-    font-family:"Fraunces",serif; font-style:italic; font-size:10.5px;
-    color:var(--ink-soft); margin-top:3px; line-height:1.2;
+    font-family:"Playfair Display",serif; font-style:italic; font-weight:400; font-size:11px;
+    color:var(--ink-soft); margin-top:4px; line-height:1.2;
   }
 
   .cover-features{
@@ -158,13 +160,12 @@
   }
   .cover-feature{ text-align:center; padding:0 6px; }
   .cover-feature .f-icon{
-    width:30px; height:30px; border-radius:50%;
-    background:var(--sage-tint); margin:0 auto 8px;
+    width:30px; height:30px; margin:0 auto 8px;
     display:flex; align-items:center; justify-content:center;
   }
   .cover-feature .f-label{
-    font-family:"Mulish",sans-serif; font-weight:700;
-    font-size:10.5px; letter-spacing:0.02em; color:var(--ink);
+    font-family:"Jost",sans-serif; font-weight:600;
+    font-size:10px; letter-spacing:0.06em; text-transform:uppercase; color:var(--ink);
     margin-bottom:3px;
   }
   .cover-feature .f-text{
@@ -177,14 +178,14 @@
     display:flex; align-items:center; justify-content:center;
   }
   .cover-bottombar span{
-    font-family:"Mulish",sans-serif; font-weight:700;
+    font-family:"Jost",sans-serif; font-weight:700;
     font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase;
     color:#FBF8F2;
   }
 
   /* ==================== NOTE PAGE ==================== */
   .note-heading{
-    font-family:"Fraunces",serif; font-weight:700;
+    font-family:"Playfair Display",serif; font-weight:700;
     font-size:50px; color:var(--ink);
     letter-spacing:-0.02em; line-height:1.0;
     margin-top:16px; margin-bottom:18px;
@@ -211,17 +212,17 @@
     margin-top:18px; margin-bottom:2px;
   }
   .pagehead h2{
-    font-family:"Fraunces",serif; font-weight:700;
+    font-family:"Playfair Display",serif; font-weight:700;
     font-size:46px; color:var(--ink);
     letter-spacing:-0.02em; line-height:1;
   }
   .pagehead .count{
-    font-family:"Mulish",sans-serif; font-weight:700;
+    font-family:"Jost",sans-serif; font-weight:700;
     font-size:11px; letter-spacing:0.2em;
     text-transform:uppercase; color:var(--grey);
   }
   .page-sub{
-    font-family:"Fraunces",serif; font-style:italic; font-weight:400;
+    font-family:"Playfair Display",serif; font-style:italic; font-weight:400;
     font-size:16px; color:var(--terra); margin-bottom:14px;
   }
 
@@ -245,7 +246,7 @@
 
   .card-num{
     position:absolute; top:14px; right:18px;
-    font-family:"Fraunces",serif; font-weight:600;
+    font-family:"Playfair Display",serif; font-weight:600;
     font-size:20px; color:var(--paper-edge);
   }
 
@@ -278,13 +279,13 @@
   .card-text{ display:flex; flex-direction:column; gap:2px; }
 
   .card-label{
-    font-family:"Mulish",sans-serif; font-weight:700;
+    font-family:"Jost",sans-serif; font-weight:700;
     font-size:8.5px; letter-spacing:0.13em; text-transform:uppercase;
   }
   .card-label-stop{ color:var(--grey); }
   .card-label-say{ color:var(--grey); }
 
-  .card-phrase{ font-family:"Fraunces",serif; line-height:1.25; }
+  .card-phrase{ font-family:"Playfair Display",serif; line-height:1.25; }
   .card-phrase-stop{ font-weight:400; font-size:14px; font-style:italic; color:var(--ink-soft); }
   .card-phrase-say{ font-weight:600; font-size:17px; color:var(--ink); letter-spacing:-0.01em; }
 
@@ -294,7 +295,7 @@
     display:flex; flex-direction:column; justify-content:center;
   }
   .card-why-label{
-    font-family:"Mulish",sans-serif; font-weight:700;
+    font-family:"Jost",sans-serif; font-weight:700;
     font-size:8.5px; letter-spacing:0.13em; text-transform:uppercase;
     color:var(--grey); margin-bottom:6px;
   }
@@ -309,7 +310,7 @@
     border-radius:12px; padding:15px 20px 16px;
   }
   .closing-note h3{
-    font-family:"Fraunces",serif; font-weight:600;
+    font-family:"Playfair Display",serif; font-weight:600;
     font-size:15px; color:var(--terra); margin-bottom:5px;
   }
   .closing-note p{
@@ -330,16 +331,16 @@
     background:var(--terra);
   }
   .colophon-title{
-    font-family:"Fraunces",serif; font-weight:600;
+    font-family:"Playfair Display",serif; font-weight:600;
     font-size:32px; line-height:1.15; letter-spacing:-0.01em;
     color:var(--ink); text-align:center;
   }
   .colophon-copy{
-    font-family:"Mulish",sans-serif; font-size:12px;
+    font-family:"Jost",sans-serif; font-size:12px;
     color:var(--grey); line-height:1.5;
   }
   .colophon-series{
-    font-family:"Mulish",sans-serif; font-size:12px;
+    font-family:"Jost",sans-serif; font-size:12px;
     color:var(--grey);
   }
   .colophon-series strong{ color:var(--terra); font-weight:700; }
@@ -383,7 +384,7 @@
 
         <div class="cover-hero">
           <div class="cover-badge">
-            <div>
+            <div class="b-inner">
               <div class="b-top">Practical Phrases</div>
               <div class="b-bottom">for Everyday Parenting</div>
             </div>
