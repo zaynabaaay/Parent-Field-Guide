@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Book Mockup</title>
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    width:600px;height:600px;
+    display:flex;align-items:center;justify-content:center;
+    background:
+      radial-gradient(circle at 15% 10%, rgba(255,255,255,.5), transparent 40%),
+      linear-gradient(135deg,#e9e3d6,#e2dccb 60%,#ddd6c2);
+    font-family:sans-serif;
+    overflow:hidden;
+    position:relative;
+  }
+
+  /* soft diagonal light/shadow streaks across the scene */
+  .light-streak{
+    position:absolute;
+    top:-10%;left:-10%;
+    width:140%;height:140%;
+    background:linear-gradient(115deg,
+      transparent 0%, transparent 38%,
+      rgba(120,110,90,.10) 42%,
+      transparent 46%,
+      transparent 60%,
+      rgba(120,110,90,.07) 64%,
+      transparent 68%);
+    pointer-events:none;
+  }
+
+  /* woven placemat, top right */
+  .mat{
+    position:absolute;
+    top:-60px;right:-60px;
+    width:220px;height:220px;
+    border-radius:50%;
+    background:
+      repeating-radial-gradient(circle at center,
+        #c8a868 0px, #c8a868 3px,
+        #b9924f 3px, #b9924f 6px);
+    box-shadow:0 10px 25px rgba(80,60,30,.18);
+  }
+
+  /* fabric throw across the bottom */
+  .fabric{
+    position:absolute;
+    bottom:-40px;left:-10%;
+    width:120%;height:170px;
+    background:linear-gradient(180deg, transparent, #d8cdb4 35%, #cabc9d);
+    border-radius:50% 50% 0 0 / 30% 30% 0 0;
+  }
+  .fabric::before{
+    content:"";
+    position:absolute;inset:0;
+    background-image:repeating-linear-gradient(100deg,
+      rgba(255,255,255,.12) 0 2px,
+      transparent 2px 14px);
+    mix-blend-mode:overlay;
+  }
+
+  /* leaf, top left */
+  .leaf{
+    position:absolute;
+    top:-30px;left:20px;
+    width:140px;height:200px;
+    opacity:.85;
+  }
+  .leaf::before, .leaf::after{
+    content:"";
+    position:absolute;
+    width:26px;height:60px;
+    background:#5b6e4f;
+    border-radius:50% 0 50% 50%;
+    transform-origin:bottom center;
+  }
+  .leaf::before{top:0;left:30px;transform:rotate(-25deg);}
+  .leaf::after{top:35px;left:55px;transform:rotate(15deg);}
+
+  /* wooden toy, bottom right */
+  .toy{
+    position:absolute;
+    bottom:55px;right:60px;
+    width:70px;height:46px;
+  }
+  .toy .body{
+    position:absolute;bottom:14px;left:0;
+    width:70px;height:24px;
+    background:linear-gradient(180deg,#c8945a,#b87f43);
+    border-radius:6px;
+  }
+  .toy .cab{
+    position:absolute;bottom:30px;left:8px;
+    width:30px;height:18px;
+    background:linear-gradient(180deg,#d4a36b,#bd8a4e);
+    border-radius:6px 6px 0 0;
+  }
+  .toy .wheel{
+    position:absolute;bottom:0;width:18px;height:18px;
+    background:#6b4a2a;border-radius:50%;
+    box-shadow:inset 0 0 0 4px #8a6238;
+  }
+  .toy .wheel.l{left:6px;}
+  .toy .wheel.r{left:46px;}
+
+  /* the three fanned books */
+  .books{
+    position:relative;
+    width:300px;height:340px;
+    perspective:900px;
+  }
+  .book{
+    position:absolute;
+    bottom:20px;left:50%;
+    width:140px;height:300px;
+    background:linear-gradient(100deg,#f4f1ea 0%, #ece7da 12%, #f6f3ec 16%, #f1ede3 100%);
+    border-radius:2px 6px 6px 2px;
+    box-shadow:
+      inset 2px 0 0 rgba(0,0,0,.06),
+      0 18px 30px rgba(70,58,40,.22);
+  }
+  .book::before{
+    content:"";
+    position:absolute;
+    left:10px;top:0;bottom:0;width:1px;
+    background:rgba(0,0,0,.08);
+  }
+  .book.left{
+    transform:translateX(-145px) rotateY(28deg) translateZ(-20px) rotate(-2deg);
+    z-index:1;
+    filter:brightness(.96);
+  }
+  .book.right{
+    transform:translateX(45px) rotateY(-28deg) translateZ(-20px) rotate(2deg);
+    z-index:1;
+    filter:brightness(.94);
+  }
+  .book.center{
+    transform:translateX(-70px) translateY(-14px);
+    height:320px;
+    z-index:2;
+    box-shadow:
+      inset 2px 0 0 rgba(0,0,0,.06),
+      0 22px 40px rgba(70,58,40,.28);
+  }
+</style>
+</head>
+<body>
+  <div class="light-streak"></div>
+  <div class="mat"></div>
+  <div class="fabric"></div>
+  <div class="leaf"></div>
+  <div class="toy">
+    <div class="cab"></div>
+    <div class="body"></div>
+    <div class="wheel l"></div>
+    <div class="wheel r"></div>
+  </div>
+
+  <div class="books">
+    <div class="book left"></div>
+    <div class="book right"></div>
+    <div class="book center"></div>
+  </div>
+</body>
+</html>
