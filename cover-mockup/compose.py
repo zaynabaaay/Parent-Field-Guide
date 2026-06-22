@@ -1,16 +1,16 @@
-"""Warp cover artwork onto the three blank books in reference/source.png,
+"""Warp cover artwork onto the three blank books in reference/source2.png,
 preserving the photo's original lighting/shadow via a multiply-blend shading map."""
 import sys
 from PIL import Image, ImageDraw, ImageFilter
 import numpy as np
 
-SOURCE = "reference/source.png"
+SOURCE = "reference/source2.png"
 
 # top-left, top-right, bottom-right, bottom-left corners of each book's front cover face
 BOOKS = {
-    "left":   [(57, 496), (427, 415), (430, 984), (171, 1045)],
-    "center": [(463, 399), (834, 401), (834, 1003), (461, 1001)],
-    "right":  [(849, 422), (1207, 497), (1117, 1010), (836, 991)],
+    "left":   [(88, 436), (404, 433), (405, 917), (91, 920)],
+    "center": [(473, 433), (787, 432), (789, 920), (472, 921)],
+    "right":  [(851, 432), (1176, 432), (1174, 921), (850, 920)],
 }
 
 
