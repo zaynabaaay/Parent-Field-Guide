@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Say This Instead — Parent Field Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,500&family=Mulish:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FBF8F2;
+    --paper-edge:#EDE8DC;
+    --ink:#2B2218;
+    --ink-soft:#4A3D32;
+    --grey:#9A8E82;
+    --grey-line:#D8CFBE;
+    --sage:#8A9A7C;
+    --sage-deep:#5F6E50;
+    --terra:#B8533A;
+    --terra-deep:#9E3D22;
+    --stage:#E6DFD3;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:var(--stage); }
+  body{
+    font-family:"Mulish",system-ui,sans-serif;
+    color:var(--ink-soft);
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  #stage{
+    display:flex; flex-direction:column; align-items:center;
+    gap:28px; padding:40px 20px 64px;
+  }
+  .page{
+    position:relative; width:8.5in; height:11in;
+    background:var(--paper); overflow:hidden;
+    box-shadow:0 18px 50px rgba(43,34,24,0.18);
+    transform-origin:top center;
+  }
+  .frame{
+    position:absolute; inset:0.78in 0.85in 0.68in;
+    display:flex; flex-direction:column;
+  }
+
+  /* ---- ● LABEL ——————————————————————— ---- */
+  .brandbar{
+    display:flex; align-items:center; gap:10px;
+  }
+  .brand-dot{
+    width:9px; height:9px; border-radius:50%;
+    background:var(--terra); flex:none;
+  }
+  .brand-name{
+    font-family:"Mulish",sans-serif; font-weight:700;
+    letter-spacing:0.22em; text-transform:uppercase;
+    font-size:10.5px; color:var(--ink-soft); white-space:nowrap;
+  }
+  .bar-rule{ flex:1; height:1px; background:var(--grey-line); }
+  .guide-num{
+    font-family:"Fraunces",serif; font-style:italic;
+    font-size:13px; color:var(--grey); white-space:nowrap;
+  }
+
+  /* ---- ———— ● ———— ---- */
+  .divider{ display:flex; align-items:center; gap:14px; }
+  .divider::before,.divider::after{
+    content:""; height:1px; background:var(--grey-line); flex:1;
+  }
+  .divider .dot{
+    width:6px; height:6px; border-radius:50%;
+    background:var(--terra); flex:none;
+  }
+
+  /* ---- GUIDE NAME ——————————————— 02 ---- */
+  .pagefoot{
+    margin-top:auto;
+    display:flex; align-items:center; gap:12px;
+    padding-top:8px; border-top:1px solid var(--grey-line);
+    font-family:"Mulish",sans-serif; font-weight:700;
+    font-size:9.5px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--grey);
+  }
+  .foot-rule{ flex:1; height:1px; background:var(--grey-line); }
+
+  /* ==================== COVER ==================== */
+  .cover .frame{ inset:0.72in 0.85in 0.65in; }
+  .cover-brandbar{ justify-content:space-between; }
+  .cover-brand-left{ display:flex; align-items:center; gap:10px; }
+
+  .cover-img-wrap{
+    flex:1; min-height:0; margin-top:24px;
+    border-radius:10px; overflow:hidden;
+  }
+  .cover-img-wrap img{
+    width:100%; height:100%; object-fit:cover; display:block;
+  }
+
+  .series-label{
+    display:flex; align-items:center; gap:14px; margin-top:0;
+  }
+  .cover .series-label{ margin-top:22px; }
+  .note-callout{ margin-top:18px; margin-bottom:0; }
+  .series-label::before,.series-label::after{
+    content:""; height:1px; background:var(--grey-line); flex:1;
+  }
+  .series-label span{
+    font-family:"Mulish",sans-serif; font-weight:700;
+    font-size:9.5px; letter-spacing:0.22em; text-transform:uppercase;
+    color:var(--terra); white-space:nowrap;
+  }
+
+  .cover h1{
+    font-family:"Fraunces",serif; font-weight:700;
+    font-size:70px; line-height:0.95; letter-spacing:-0.02em;
+    color:var(--ink); text-align:center; margin-top:16px;
+  }
+
+  .cover-sub{
+    font-family:"Fraunces",serif; font-style:italic; font-weight:400;
+    font-size:20px; color:var(--grey); text-align:center;
+    margin-top:12px; line-height:1.35;
+  }
+
+  .cover .divider{ margin-top:22px; }
+
+  /* ==================== NOTE PAGE ==================== */
+  .note-heading{
+    font-family:"Fraunces",serif; font-weight:700;
+    font-size:50px; color:var(--ink);
+    letter-spacing:-0.02em; line-height:1.0;
+    margin-top:16px; margin-bottom:18px;
+  }
+  .img-banner{
+    width:100%; height:4.2in;
+    border-radius:10px; overflow:hidden;
+    border:1px dashed var(--grey-line);
+  }
+  .img-banner img{ width:100%; height:100%; object-fit:cover; display:block; }
+  .note-img{ flex:1; min-height:0; height:auto; margin-top:24px; }
+  .note-body{ margin-top:20px; }
+  .note-body p{
+    font-size:13.5px; line-height:1.72; color:var(--ink-soft);
+    margin-bottom:13px;
+  }
+  .note-body p:last-child{ margin-bottom:0; }
+  .note-body b{ color:var(--ink); font-weight:700; }
+
+
+  .cover-by{
+    text-align:center; font-family:"Mulish",sans-serif;
+    font-size:13px; font-weight:400; color:var(--ink-soft); margin-top:14px;
+  }
+  .cover-by strong{ color:var(--terra); font-weight:600; }
+
+  /* ==================== INNER PAGES ==================== */
+  .pagehead{
+    display:flex; align-items:baseline; justify-content:space-between;
+    margin-top:18px; margin-bottom:2px;
+  }
+  .pagehead h2{
+    font-family:"Fraunces",serif; font-weight:700;
+    font-size:46px; color:var(--ink);
+    letter-spacing:-0.02em; line-height:1;
+  }
+  .pagehead .count{
+    font-family:"Mulish",sans-serif; font-weight:700;
+    font-size:11px; letter-spacing:0.2em;
+    text-transform:uppercase; color:var(--grey);
+  }
+  .page-sub{
+    font-family:"Fraunces",serif; font-style:italic; font-weight:400;
+    font-size:16px; color:var(--terra); margin-bottom:14px;
+  }
+
+  /* ---- card list ---- */
+  .swap-list{
+    flex:1; min-height:0;
+    display:flex; flex-direction:column;
+    gap:10px;
+  }
+  #grid-b{ margin-top:16px; }
+
+  .swap-card{
+    flex:1;
+    position:relative;
+    background:#FFFFFF;
+    border:1px solid var(--grey-line);
+    border-radius:14px;
+    padding:16px 20px;
+    display:flex; align-items:center;
+  }
+
+  .card-num{
+    position:absolute; top:14px; right:18px;
+    font-family:"Fraunces",serif; font-weight:600;
+    font-size:20px; color:var(--paper-edge);
+  }
+
+  .card-inner{
+    display:grid;
+    grid-template-columns:3fr 2fr;
+    gap:0;
+    width:100%;
+  }
+
+  /* left column — phrases */
+  .card-phrases{
+    display:flex; flex-direction:column; gap:12px;
+    padding-right:20px;
+    border-right:1px solid var(--grey-line);
+  }
+
+  .card-stop, .card-say{
+    display:flex; align-items:flex-start; gap:10px;
+  }
+
+  .card-mark{
+    flex:none; width:20px; height:20px; border-radius:50%;
+    display:grid; place-items:center; margin-top:1px;
+  }
+  .card-mark svg{ display:block; }
+  .card-mark-stop{ border:1.5px solid var(--grey); background:transparent; }
+  .card-mark-say{ background:var(--sage); border:1.5px solid var(--sage); }
+
+  .card-text{ display:flex; flex-direction:column; gap:2px; }
+
+  .card-label{
+    font-family:"Mulish",sans-serif; font-weight:700;
+    font-size:8.5px; letter-spacing:0.13em; text-transform:uppercase;
+  }
+  .card-label-stop{ color:var(--grey); }
+  .card-label-say{ color:var(--grey); }
+
+  .card-phrase{ font-family:"Fraunces",serif; line-height:1.25; }
+  .card-phrase-stop{ font-weight:400; font-size:14px; font-style:italic; color:var(--ink-soft); }
+  .card-phrase-say{ font-weight:600; font-size:17px; color:var(--ink); letter-spacing:-0.01em; }
+
+  /* right column — why it works */
+  .card-why{
+    padding-left:20px;
+    display:flex; flex-direction:column; justify-content:center;
+  }
+  .card-why-label{
+    font-family:"Mulish",sans-serif; font-weight:700;
+    font-size:8.5px; letter-spacing:0.13em; text-transform:uppercase;
+    color:var(--grey); margin-bottom:6px;
+  }
+  .card-why-text{
+    font-size:11px; line-height:1.6; color:var(--ink-soft);
+  }
+
+  /* ---- closing note ---- */
+  .closing-note{
+    margin-top:auto; margin-bottom:14px;
+    background:var(--paper-edge);
+    border-radius:12px; padding:15px 20px 16px;
+  }
+  .closing-note h3{
+    font-family:"Fraunces",serif; font-weight:600;
+    font-size:15px; color:var(--terra); margin-bottom:5px;
+  }
+  .closing-note p{
+    font-size:11.5px; line-height:1.55; color:var(--ink-soft);
+  }
+  .closing-note em{ font-style:italic; color:var(--sage-deep); }
+
+  /* ==================== COLOPHON ==================== */
+  .colophon .frame{
+    display:flex; align-items:center; justify-content:center;
+  }
+  .colophon-content{
+    text-align:center; display:flex; flex-direction:column;
+    align-items:center; gap:18px;
+  }
+  .colophon-dot{
+    width:10px; height:10px; border-radius:50%;
+    background:var(--terra);
+  }
+  .colophon-title{
+    font-family:"Fraunces",serif; font-weight:600;
+    font-size:32px; line-height:1.15; letter-spacing:-0.01em;
+    color:var(--ink); text-align:center;
+  }
+  .colophon-copy{
+    font-family:"Mulish",sans-serif; font-size:12px;
+    color:var(--grey); line-height:1.5;
+  }
+  .colophon-series{
+    font-family:"Mulish",sans-serif; font-size:12px;
+    color:var(--grey);
+  }
+  .colophon-series strong{ color:var(--terra); font-weight:700; }
+
+  /* ==================== PRINT ==================== */
+  @page{ size:Letter; margin:0; }
+  @media print{
+    html,body{ background:#fff; }
+    #stage{ display:block; padding:0; gap:0; }
+    .page{
+      box-shadow:none; transform:none !important;
+      page-break-after:always; break-after:page;
+    }
+    .page:last-child{ page-break-after:auto; break-after:auto; }
+  }
+</style>
+</head>
+<body>
+<div id="stage">
+
+  <!-- ============== COVER ============== -->
+  <section class="page cover" data-screen-label="Page 1 — Cover">
+    <div class="frame">
+      <div class="brandbar cover-brandbar">
+        <div class="cover-brand-left">
+          <span class="brand-dot"></span>
+          <span class="brand-name">Parent Field Guide</span>
+        </div>
+        <span class="guide-num">Field Guide Nº 02</span>
+      </div>
+
+      <div class="cover-img-wrap">
+        <img src="assets/parent-child-connection.png" alt="A parent crouched to their child's eye level">
+      </div>
+
+      <div class="series-label"><span>The Calm Parenting Series</span></div>
+
+      <h1>Say This<br>Instead</h1>
+
+      <p class="cover-sub">10 phrase swaps for calmer, more connected parenting.</p>
+
+      <div class="divider"><span class="dot"></span></div>
+
+      <p class="cover-by">A guide by <strong>Parent Field Guide</strong></p>
+    </div>
+  </section>
+
+  <!-- ============== PAGE 2 — NOTE TO PARENT ============== -->
+  <section class="page" data-screen-label="Page 2 — Note to Parent">
+    <div class="frame">
+      <div class="brandbar">
+        <span class="brand-dot"></span>
+        <span class="brand-name">Before We Begin</span>
+        <div class="bar-rule"></div>
+      </div>
+
+      <h2 class="note-heading">The Phrases<br>We Reach For</h2>
+
+      <div class="note-body">
+        <p>Most of these phrases are automatic. You say them because they're familiar — often because you heard them growing up. In a hard moment, your brain reaches for what it knows. That's not a flaw. That's just how habits work.</p>
+        <p>This guide doesn't ask you to parent differently. It just gives you a better option ready — so when the moment comes, you're not searching for words.</p>
+        <p>Pick one phrase. Practice it until it sounds like you. Then come back for another.</p>
+      </div>
+
+      <div class="closing-note note-callout">
+        <h3>A note for hard days</h3>
+        <p>You will still say the wrong thing. Every parent does. What matters is the repair — a simple <em>"I could have handled that better"</em> is enough.</p>
+      </div>
+
+      <div class="img-banner note-img">
+        <img src="assets/note-parent-morning.png" alt="A parent sitting quietly with a mug in the morning">
+      </div>
+
+      <div class="pagefoot">
+        <span>Say This Instead</span>
+        <div class="foot-rule"></div>
+        <span class="pg">02</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== PAGE 3 — SWAPS 1–5 ============== -->
+  <section class="page" data-screen-label="Page 3 — Swaps 1–5">
+    <div class="frame">
+      <div class="brandbar">
+        <span class="brand-dot"></span>
+        <span class="brand-name">What To Say</span>
+        <div class="bar-rule"></div>
+      </div>
+
+      <div class="pagehead">
+        <h2>The Swaps</h2>
+        <span class="count">01 – 05</span>
+      </div>
+      <p class="page-sub">What to say when the moment hits</p>
+
+      <div class="swap-list" id="grid-a"></div>
+
+      <div class="pagefoot">
+        <span>Say This Instead</span>
+        <div class="foot-rule"></div>
+        <span class="pg">03</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== PAGE 4 — SWAPS 6–10 ============== -->
+  <section class="page" data-screen-label="Page 4 — Swaps 6–10">
+    <div class="frame">
+      <div class="brandbar">
+        <span class="brand-dot"></span>
+        <span class="brand-name">What To Say · Continued</span>
+        <div class="bar-rule"></div>
+      </div>
+
+      <div class="pagehead">
+        <h2>The Swaps</h2>
+        <span class="count">06 – 10</span>
+      </div>
+      <div class="swap-list" id="grid-b"></div>
+
+      <div class="pagefoot">
+        <span>Say This Instead</span>
+        <div class="foot-rule"></div>
+        <span class="pg">04</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== PAGE 5 — COLOPHON ============== -->
+  <section class="page colophon" data-screen-label="Page 5 — Colophon">
+    <div class="frame">
+      <div class="colophon-content">
+        <div class="colophon-dot"></div>
+        <h2 class="colophon-title">Say This<br>Instead</h2>
+        <p class="colophon-copy">© Parent Field Guide. All rights reserved.</p>
+        <p class="colophon-series">Nº 02 in <strong>The Calm Parenting Series</strong></p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script>
+const swaps = [
+  { stop:'"Stop crying."',
+    say:'"It’s okay to feel upset. I’m right here."',
+    why:`Telling a child to stop crying sends the message that their feelings are wrong. Naming the feeling — even briefly — is usually what actually moves things along.` },
+  { stop:'"Because I said so."',
+    say:'"I know that feels unfair. The answer is still no."',
+    why:`This holds the boundary while acknowledging their frustration. Children are more likely to accept a no when they feel heard — even if they’re still unhappy about it.` },
+  { stop:'"You’re fine."',
+    say:'"That hurt, didn’t it. Let me see."',
+    why:`Dismissing pain — even small pain — teaches children that their body’s signals aren’t worth reporting. Checking in, even briefly, tells them the opposite.` },
+  { stop:'"Stop being so dramatic."',
+    say:'"You’re really feeling this one. I get it."',
+    why:`Labels stick. A child told often enough that their reactions are too much will start to believe it — and learn to hide what they feel rather than work through it.` },
+  { stop:'"Good job!"',
+    say:'"You worked really hard on that."',
+    why:`"Good job" tells a child about the result. "You worked hard" tells them about themselves. Children who hear the second version are more likely to push through something difficult rather than avoid it.` },
+  { stop:'"Why can’t you just listen?"',
+    say:'"I need your help right now. Can you show me you’re listening?"',
+    why:`The first phrase puts a child on the defensive. The second gives them something concrete to do — and the expectation lands without the argument.` },
+  { stop:'"If you don’t stop, we’re leaving."',
+    say:'"I know you’re not ready to go. Five more minutes, then we’re leaving."',
+    why:`Empty threats teach children the boundary isn’t real. A calm, specific warning is far more effective — and much easier to follow through on.` },
+  { stop:'"Say sorry."',
+    say:'"Can you think of something that might make them feel better?"',
+    why:`A forced sorry teaches a child what to say, not what to feel. Asking what might help the other person is the thing that actually gets them thinking about it.` },
+  { stop:'"You always do this."',
+    say:'"Right now, this isn’t working. Let’s try again."',
+    why:`Words like “always” and “never” become part of how a child sees themselves. Keeping it specific to the moment is easier for them to hear — and actually do something about.` },
+  { stop:'"Go to your room."',
+    say:'"Let’s both take a few minutes to calm down, then we’ll talk."',
+    why:`Sending a child away when they're upset can read as punishment for having feelings. Framing the pause as something you're both doing keeps the door open.` },
+];
+
+const xIcon = '<svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 1.5 8.5 8.5M8.5 1.5 1.5 8.5" stroke="#9A8E82" stroke-width="1.6" stroke-linecap="round"/></svg>';
+const checkIcon = '<svg width="11" height="11" viewBox="0 0 12 12" fill="none"><path d="M2 6.4 4.7 9 10 3" stroke="#fff" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+
+function rowHTML(s, i){
+  const num = String(i+1).padStart(2,'0');
+  return `
+  <article class="swap-card">
+    <span class="card-num">${num}</span>
+    <div class="card-inner">
+      <div class="card-phrases">
+        <div class="card-stop">
+          <span class="card-mark card-mark-stop">${xIcon}</span>
+          <div class="card-text">
+            <p class="card-label card-label-stop">Instead of saying</p>
+            <p class="card-phrase card-phrase-stop">${s.stop}</p>
+          </div>
+        </div>
+        <div class="card-say">
+          <span class="card-mark card-mark-say">${checkIcon}</span>
+          <div class="card-text">
+            <p class="card-label card-label-say">Try this</p>
+            <p class="card-phrase card-phrase-say">${s.say}</p>
+          </div>
+        </div>
+      </div>
+      <div class="card-why">
+        <p class="card-why-label">Why it works</p>
+        <p class="card-why-text">${s.why}</p>
+      </div>
+    </div>
+  </article>`;
+}
+
+const gridA = document.getElementById('grid-a');
+const gridB = document.getElementById('grid-b');
+swaps.slice(0,5).forEach((s,i)=> gridA.insertAdjacentHTML('beforeend', rowHTML(s,i)));
+swaps.slice(5,10).forEach((s,i)=> gridB.insertAdjacentHTML('beforeend', rowHTML(s,i+5)));
+
+function fit(){
+  const pad = 40;
+  const avail = Math.min(window.innerWidth - pad, 816);
+  const scale = avail / 816;
+  document.querySelectorAll('.page').forEach(p=>{
+    p.style.transform = scale < 1 ? `scale(${scale})` : 'none';
+    p.style.marginBottom = scale < 1 ? `${(scale-1)*1056 + 28}px` : '';
+  });
+}
+window.addEventListener('resize', fit);
+fit();
+</script>
+</body>
+</html>
