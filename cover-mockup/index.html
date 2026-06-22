@@ -3,27 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <title>Guide Cover Mockup</title>
-<link rel="stylesheet" href="style.css">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #e8e2d6;
+  }
+  img {
+    max-width: 90vw;
+    max-height: 90vh;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.15);
+  }
+</style>
 </head>
 <body>
-  <div class="stage">
-    <div class="light-sweep"></div>
-
-    <div class="books">
-      <div class="ground-shadow"></div>
-      <div class="book book-left">
-        <div class="cover" style="--cover: none;"></div>
-        <div class="spine-highlight"></div>
-      </div>
-      <div class="book book-center">
-        <div class="cover" style="--cover: none;"></div>
-        <div class="spine-highlight"></div>
-      </div>
-      <div class="book book-right">
-        <div class="cover" style="--cover: none;"></div>
-        <div class="spine-highlight"></div>
-      </div>
-    </div>
-  </div>
+  <img src="output.png" alt="Parent Field Guide cover mockup">
 </body>
 </html>

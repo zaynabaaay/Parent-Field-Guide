@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Toddler Meltdown Field Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#FAF7F1;
+    --paper-2:#EDE8DF;
+    --ink:#1F1506;
+    --ink-soft:#5A544C;
+    --grey:#888078;
+    --line:#DDD6CA;
+    --sage:#8A9A7B;
+    --sage-deep:#677656;
+    --sage-tint:#E8EBE2;
+    --sage-tint-2:#EEF1E9;
+    --neutral-tint:#F2EDE3;
+    --terra:#B85C38;
+    --terra-deep:#9A4A2A;
+    --terra-tint:#F0E4DA;
+    --serif:"Libre Baskerville",Georgia,serif;
+    --sans:"Hanken Grotesk",-apple-system,sans-serif;
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{background:#D9D3C8;}
+  body{
+    font-family:var(--sans);
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased;
+    padding:40px 0 80px;
+  }
+
+  #wrap{display:flex;justify-content:center;}
+  #pages{width:8.5in;transform-origin:top center;}
+
+  .sheet{
+    width:8.5in;
+    height:11in;
+    background:var(--paper);
+    position:relative;
+    overflow:hidden;
+    margin:0 auto 34px;
+    box-shadow:0 18px 50px rgba(60,52,40,.18);
+  }
+  .pad{
+    position:absolute;
+    inset:0.72in 0.82in 0.64in;
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* ---- typography ---- */
+  h1,h2,h3{font-family:var(--serif);font-weight:700;line-height:1.08;color:var(--ink);}
+  p{font-size:11pt;line-height:1.65;color:var(--ink-soft);}
+
+  /* ---- section label: ● LABEL ———— ---- */
+  .sec-label{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .sec-label .dot{width:9px;height:9px;border-radius:50%;background:var(--terra);flex:none;}
+  .sec-label .txt{font-size:8pt;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);white-space:nowrap;}
+  .sec-label .ln{flex:1;height:1px;background:var(--line);}
+
+  /* ---- page titles ---- */
+  .page-title{font-size:36pt;line-height:1.06;margin-bottom:9px;}
+  .page-sub{font-family:var(--serif);font-size:12.5pt;font-style:italic;color:var(--terra);margin-bottom:12px;}
+
+  /* dot-centered divider */
+  .dot-rule{display:flex;align-items:center;gap:10px;margin:16px 0;}
+  .dot-rule::before,.dot-rule::after{content:"";flex:1;height:1px;background:var(--line);}
+  .dot-rule .d{width:6px;height:6px;border-radius:50%;background:var(--terra);flex:none;}
+
+  /* ---- mini section header: LABEL ———— ---- */
+  .mini-head{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+  .mini-head span:first-child{font-size:7.5pt;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-deep);white-space:nowrap;}
+  .mini-head .ln{flex:1;height:1px;background:var(--line);}
+
+  /* ---- bullets ---- */
+  ul.bullets{list-style:none;display:flex;flex-direction:column;gap:12px;}
+  ul.bullets li{position:relative;padding-left:22px;font-size:11pt;line-height:1.55;color:var(--ink-soft);}
+  ul.bullets li::before{content:"";position:absolute;left:2px;top:.52em;width:8px;height:8px;border-radius:50%;background:var(--terra);}
+  ul.bullets li b{color:var(--ink);font-weight:700;}
+
+  /* ---- 2-col cards ---- */
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .card{background:var(--terra-tint);border:1px solid #EAD2C4;border-radius:12px;padding:16px 18px;}
+  .card.up{background:var(--sage-tint-2);border-color:#D9E0CF;}
+  .card h3{font-size:13pt;margin-bottom:6px;}
+  .card p{font-size:11pt;line-height:1.5;}
+  .card .tag{font-size:7.5pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--terra);display:block;margin-bottom:5px;}
+  .card.up .tag{color:var(--sage-deep);}
+
+  /* ---- callout ---- */
+  .callout{border-radius:12px;padding:18px 22px;background:var(--neutral-tint);}
+  .callout .co-lab{display:block;font-family:var(--sans);font-weight:700;font-size:8pt;letter-spacing:.16em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:7px;}
+  .callout p{font-family:var(--serif);font-size:12pt;line-height:1.5;color:var(--ink);font-style:italic;}
+
+  /* ---- moment layout (text + side image) ---- */
+  .moment-layout{display:flex;gap:0.3in;align-items:stretch;}
+  .moment-text{flex:1;min-width:0;}
+  .moment-image{flex:none;width:2.15in;}
+
+  /* ---- steps ---- */
+  .steps{display:flex;flex-direction:column;gap:15px;}
+  .step{display:flex;gap:13px;align-items:flex-start;}
+  .step .n{flex:none;width:27px;height:27px;border-radius:50%;background:var(--sage-tint);color:var(--sage-deep);font-family:var(--serif);font-weight:700;font-size:12pt;display:flex;align-items:center;justify-content:center;margin-top:1px;}
+  .step .b h3{font-size:12pt;margin-bottom:2px;}
+  .step .b p{font-size:11pt;line-height:1.45;}
+  .step .b p .ex{color:var(--terra-deep);font-style:italic;}
+
+  /* ---- scripts ---- */
+  .say-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line);}
+  .say-cell{padding:14px 20px 16px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .say-cell .lab{font-size:8.5pt;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--terra);line-height:1.35;margin-bottom:9px;}
+  .say-cell .quote-line{display:block;font-family:var(--serif);font-size:10.5pt;font-style:italic;color:var(--ink);line-height:1.6;}
+
+  /* ---- footer ---- */
+  .foot{position:absolute;left:0.82in;right:0.82in;bottom:0.4in;display:flex;align-items:center;gap:12px;}
+  .brandmark{font-size:7.5pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);white-space:nowrap;}
+  .foot-rule{flex:1;height:1px;background:var(--line);}
+  .pageno{font-family:var(--serif);font-size:9.5pt;color:var(--grey);}
+
+  /* ---- image treatment ---- */
+  .figband{display:block;border:1.5px dashed var(--line);border-radius:12px;overflow:hidden;}
+
+  /* ============ COVER ============ */
+  .cover{background:var(--paper);}
+  .cover .arc-top{position:absolute;top:0;left:0;right:0;height:2.1in;background:radial-gradient(120% 100% at 50% 0,var(--sage-tint) 0,var(--paper) 72%);}
+  .cover-in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:0.9in 0.9in 0.8in;}
+  .cover .eyebrow{font-size:8.5pt;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--terra);}
+  .cover .ribbon{display:flex;align-items:center;gap:12px;white-space:nowrap;}
+  .cover .ribbon .ln{width:34px;height:1px;background:var(--terra);opacity:.5;}
+  .cover-content{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.3in;}
+  .cover-hero{position:relative;}
+  .cover-hero::before{content:"";position:absolute;top:-0.42in;left:-0.42in;width:calc(5.8in + 0.84in);height:calc(3.5in + 0.84in);background:url('uploads/cover-shadow.png') center/100% 100% no-repeat;z-index:0;}
+  .cover-hero img{position:relative;z-index:1;width:5.8in;height:3.5in;object-fit:cover;object-position:50% 55%;border-radius:18px;display:block;}
+  .cover h1{font-family:"Playfair Display",var(--serif);font-size:50pt;line-height:1.05;font-weight:700;letter-spacing:-.01em;text-align:center;}
+  .cover h1 em{font-style:italic;color:var(--terra);font-size:0.6em;display:block;margin-top:6px;}
+  .cover .sub{font-size:13pt;line-height:1.55;color:var(--ink-soft);max-width:5in;font-weight:500;margin:0;text-align:center;}
+  .cover-foot{display:flex;justify-content:space-between;align-items:center;width:100%;}
+  .cover-foot .bn{display:flex;align-items:center;gap:9px;font-family:var(--sans);font-size:8.5pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);}
+  .cover-foot .bn .dot{width:9px;height:9px;border-radius:50%;background:var(--terra);flex:none;}
+  .cover-foot .num{font-family:var(--serif);font-size:11pt;font-style:italic;color:var(--ink-soft);}
+
+  /* ============ WELCOME ============ */
+  .welcome .big-q{font-family:var(--serif);font-size:25pt;line-height:1.12;font-weight:700;color:var(--ink);margin-bottom:14px;}
+  .welcome .big-q em{color:var(--terra);font-style:italic;}
+  .welcome p{font-size:11.5pt;line-height:1.62;margin-bottom:13px;}
+  .use-box{margin-top:20px;background:var(--sage-tint-2);border:1px solid #D9E0CF;border-radius:13px;padding:20px 24px;}
+  .use-box .use-title{font-size:7.5pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--sage-deep);margin-bottom:12px;display:block;}
+  .use-box ul{list-style:none;display:flex;flex-direction:column;gap:10px;}
+  .use-box li{position:relative;padding-left:27px;font-size:10.5pt;line-height:1.5;color:var(--ink-soft);}
+  .use-box li b{color:var(--ink);font-weight:700;}
+  .use-box li svg{position:absolute;left:0;top:1px;width:18px;height:18px;}
+
+  /* ============ CHEAT SHEET ============ */
+  .cheat .pad{inset:0.48in 0.6in 0.44in;}
+  .cheat-head{text-align:center;margin-bottom:30px;}
+  .cheat-head .eyebrow{font-size:7.5pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--terra);display:block;margin-bottom:5px;}
+  .cheat-head h2{font-size:23pt;}
+  .cheat-head .pin{font-size:9pt;color:var(--grey);margin-top:5px;font-weight:600;letter-spacing:.04em;}
+  .cheat-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(2,1fr);gap:22px;}
+  .cbox{border-radius:11px;padding:22px 25px;border:1.5px solid var(--line);background:#fff;display:flex;flex-direction:column;}
+  .cbox .ch{display:flex;align-items:center;gap:8px;margin-bottom:12px;}
+  .cbox .ch .dot{width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex:none;}
+  .cbox .ch .dot svg{width:11px;height:11px;}
+  .cbox .ch h3{font-size:11.5pt;white-space:nowrap;}
+  .cbox .dot{background:var(--sage);}
+  .cbox.say .dot{background:var(--terra);}
+  .cbox.avoid .dot{background:var(--grey);}
+  .cbox ol{list-style:none;counter-reset:c;display:flex;flex-direction:column;gap:8px;}
+  .cbox ol li{counter-increment:c;position:relative;padding-left:22px;font-size:10pt;line-height:1.4;color:var(--ink);}
+  .cbox ol li::before{content:counter(c);position:absolute;left:0;top:.5px;width:14px;height:14px;border-radius:50%;background:var(--sage);color:#fff;font-size:7pt;font-weight:700;display:flex;align-items:center;justify-content:center;}
+  .cbox.say ul{list-style:none;display:flex;flex-direction:column;gap:9px;}
+  .cbox.say ul li{font-family:var(--serif);font-size:10.5pt;font-style:italic;color:var(--ink);line-height:1.35;}
+  .cbox ul.dotlist{list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .cbox ul.dotlist li{font-size:10pt;line-height:1.4;color:var(--ink);padding-left:14px;position:relative;}
+  .cbox ul.dotlist li::before{content:"";position:absolute;left:0;top:.55em;width:5px;height:5px;border-radius:50%;background:var(--sage);}
+  .cbox.say ul.dotlist li::before{background:var(--terra);}
+  .cbox.avoid ul.dotlist li::before{background:var(--grey);}
+  .cheat-foot{margin-top:32px;display:flex;justify-content:space-between;align-items:center;width:100%;}
+  .cheat-foot .bn{display:flex;align-items:center;gap:9px;font-family:var(--sans);font-size:7.5pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--ink);}
+  .cheat-foot .bn .dot{width:8px;height:8px;border-radius:50%;background:var(--terra);flex:none;}
+  .cheat-foot .title{font-size:7.5pt;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--grey);}
+
+  /* ============ PRINT ============ */
+  @page{size:letter;margin:0;}
+  @media print{
+    html,body{background:#fff;padding:0;}
+    #pages{transform:none!important;width:8.5in;}
+    .sheet{margin:0;box-shadow:none;page-break-after:always;break-after:page;}
+    .sheet:last-child{page-break-after:auto;}
+  }
+</style>
+</head>
+<body>
+
+<template id="__bundler_thumbnail" data-bg-color="#FAF7F1">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#FAF7F1"/>
+    <circle cx="600" cy="360" r="150" fill="none" stroke="#B85C38" stroke-width="8" opacity="0.55"/>
+    <circle cx="600" cy="360" r="100" fill="none" stroke="#8A9A7B" stroke-width="8" opacity="0.85"/>
+    <circle cx="600" cy="360" r="48" fill="#8A9A7B"/>
+    <text x="600" y="560" text-anchor="middle" font-family="Georgia, serif" font-size="58" font-style="italic" fill="#1F1506">Field Guide</text>
+  </svg>
+</template>
+
+<div id="wrap">
+<div id="pages">
+
+  <!-- ============ PAGE 1 — COVER ============ -->
+  <section class="sheet cover" data-screen-label="Cover">
+    <div class="arc-top"></div>
+    <div class="cover-in">
+      <div class="cover-foot">
+        <div class="bn"><span class="dot"></span>Parent Field Guide</div>
+        <div class="num">Field Guide Nº 03</div>
+      </div>
+
+      <div class="cover-content">
+        <div class="ribbon">
+          <span class="ln"></span>
+          <span class="eyebrow">The Calm Parenting Series</span>
+          <span class="ln"></span>
+        </div>
+        <h1>The Toddler<br>Meltdown<br><em>Field Guide</em></h1>
+        <div class="cover-hero">
+          <img id="dgv-cover" src="uploads/cover-crouch.png" alt="Parent crouching to comfort an upset toddler at eye level">
+        </div>
+        <p class="sub">A practical guide to understanding, responding to, and preventing toddler meltdowns.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PAGE 2 — BEFORE WE BEGIN ============ -->
+  <section class="sheet" data-screen-label="A note before we start">
+    <div class="pad welcome">
+      <div class="sec-label">
+        <span class="dot"></span>
+        <span class="txt">Before We Begin</span>
+        <span class="ln"></span>
+      </div>
+
+      <div class="figband" style="margin-bottom:18px;height:3.3in;">
+        <img src="uploads/welcome-meltdown.png" alt="Toddler mid-meltdown surrounded by toys" style="width:100%;height:100%;object-fit:cover;object-position:50% 60%;display:block;">
+      </div>
+
+      <div class="big-q">If your toddler melted down today, you're in the <em>right place.</em></div>
+      <p>Over the wrong cup, the broken biscuit, or something you still can't explain — meltdowns aren't a sign that you're failing. They're a sign that your child is developing exactly as they should.</p>
+      <p>This guide explains why meltdowns happen, what to do in the moment, and how to make them happen less often. No judgment here — just research, practical tools, and scripts you can actually use.</p>
+
+      <div class="use-box">
+        <span class="use-title">How to use this guide</span>
+        <ul>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#8A9A7B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6h16M4 12h16M4 18h10"/></svg><b>Skim the headers first.</b> Every page is built to read in under a minute.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#8A9A7B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6M9 13h6"/></svg><b>Print the last page</b> and stick it on the fridge for the moments you can't think straight.</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="#8A9A7B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg><b>There's no perfect script.</b> Borrow the words that feel like you, and skip the rest.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot">
+      <span class="brandmark">The Toddler Meltdown Field Guide</span>
+      <span class="foot-rule"></span>
+      <span class="pageno">02</span>
+    </div>
+  </section>
+
+  <!-- ============ PAGE 3 — WHY (Section 01) ============ -->
+  <section class="sheet" data-screen-label="Why toddlers melt down">
+    <div class="pad">
+      <div class="sec-label">
+        <span class="dot"></span>
+        <span class="txt">Section One</span>
+        <span class="ln"></span>
+      </div>
+      <h2 class="page-title">Why toddlers melt down</h2>
+      <p class="page-sub">It's not bad behaviour — it's biology.</p>
+
+      <p style="margin-bottom:20px;">One minute your child is happily eating a snack. The next they're crying because the biscuit broke in half. To adults, that reaction can seem completely out of proportion. To toddlers, it feels very real. If you've ever wondered how a child can go from calm to inconsolable in seconds, the answer has a lot to do with how a toddler's brain develops.</p>
+
+      <div class="mini-head">
+        <span>Two parts of your child's brain explain most meltdowns</span>
+        <span class="ln"></span>
+      </div>
+
+      <div class="grid2" style="margin-bottom:20px;">
+        <div class="card">
+          <span class="tag">The emotional brain</span>
+          <h3>Feelings &amp; instinct</h3>
+          <p>This is where emotions, instincts, and quick reactions live. It develops early and responds fast.</p>
+          <p style="margin-top:6px;">When your toddler feels frustrated, disappointed, scared, or overwhelmed, this part of the brain takes charge.</p>
+        </div>
+        <div class="card up">
+          <span class="tag">The thinking brain</span>
+          <h3>Logic &amp; self-control</h3>
+          <p>This is where reasoning, planning, language, and self-control develop.</p>
+          <p style="margin-top:6px;">These skills take many years to mature. In toddlers, they've barely started developing.</p>
+        </div>
+      </div>
+
+      <p style="margin-bottom:20px;">When something upsets your toddler, the emotional brain reacts instantly — before the thinking brain is developed enough to step in and help them reason it through. That's why a small frustration, like a broken biscuit, can trigger a reaction big enough to look like a crisis.</p>
+
+      <div class="mini-head">
+        <span>What this means for you</span>
+        <span class="ln"></span>
+      </div>
+
+      <ul class="bullets" style="margin-bottom:0;">
+        <li><b>They're not being manipulative.</b> A meltdown is an overwhelmed brain, not a strategy.</li>
+        <li><b>They genuinely can't reason in that moment.</b> The thinking part of the brain isn't fully available.</li>
+        <li><b>They can't calm down alone.</b> Self-regulation develops over time and they need your help to get there.</li>
+        <li><b>Your calm matters.</b> Children take their cues from the adults around them.</li>
+      </ul>
+
+      <div class="dot-rule" style="margin-top:20px;"><span class="d"></span></div>
+      <p style="font-family:var(--serif);font-size:13pt;font-style:italic;text-align:center;color:var(--ink);line-height:1.45;">They're not giving you a hard time. <span style="color:var(--terra);">They're having a hard time.</span></p>
+    </div>
+    <div class="foot">
+      <span class="brandmark">The Toddler Meltdown Field Guide</span>
+      <span class="foot-rule"></span>
+      <span class="pageno">03</span>
+    </div>
+  </section>
+
+  <!-- ============ PAGE 4 — COMMON TRIGGERS (Section 02) ============ -->
+  <section class="sheet" data-screen-label="Common triggers">
+    <div class="pad">
+      <div class="sec-label">
+        <span class="dot"></span>
+        <span class="txt">Section Two</span>
+        <span class="ln"></span>
+      </div>
+      <h2 class="page-title">Common triggers</h2>
+      <p class="page-sub">What to look for — and why it matters.</p>
+
+      <div class="figband" style="margin-bottom:16px;height:1.95in;">
+        <img src="uploads/triggers-store.png" alt="Toddler fussing in a shopping cart" style="width:100%;height:100%;object-fit:cover;object-position:50% 10%;display:block;">
+      </div>
+
+      <p style="margin-bottom:20px;">Most meltdowns don't come out of nowhere. When you look back, there's usually a clue. Learning to recognize common triggers can help you understand what's really going on — and sometimes prevent a meltdown before it starts.</p>
+
+      <ul class="bullets" style="margin-bottom:0;">
+        <li><b>Hunger.</b> When a toddler is hungry, even small frustrations can feel much bigger than they normally would. Many meltdowns happen shortly before meals or snacks, when patience is already running low.</li>
+        <li><b>Tiredness.</b> An overtired child has a much harder time coping with disappointment and frustration. The bedtime meltdown is often less about the immediate problem and more about simply being exhausted.</li>
+        <li><b>Overstimulation.</b> Busy stores, family gatherings, loud environments, and long days can be too much for a toddler to handle. Sometimes what looks like a meltdown out of nowhere is really a child who has reached their limit.</li>
+        <li><b>Transitions.</b> Leaving the playground. Turning off the television. Getting into the car. Many meltdowns happen when something enjoyable comes to an end — even when they know it's coming, toddlers often struggle.</li>
+        <li><b>Loss of control.</b> Toddlers are at an age where they want to do things themselves. Sometimes a meltdown starts because they wanted to push the button, carry the bag, choose the cup, or decide what happens next.</li>
+        <li><b>Look for patterns.</b> If the same meltdowns keep happening, pay attention to the pattern. Do they happen before dinner? After daycare? During errands? Whenever it's time to leave somewhere fun?</li>
+      </ul>
+    </div>
+    <div class="foot">
+      <span class="brandmark">The Toddler Meltdown Field Guide</span>
+      <span class="foot-rule"></span>
+      <span class="pageno">04</span>
+    </div>
+  </section>
+
+  <!-- ============ PAGE 5 — WHAT MAKES IT WORSE (Section 03) ============ -->
+  <section class="sheet" data-screen-label="What makes it worse">
+    <div class="pad">
+      <div class="sec-label">
+        <span class="dot"></span>
+        <span class="txt">Section Three</span>
+        <span class="ln"></span>
+      </div>
+      <h2 class="page-title">Reactions that often backfire</h2>
+      <p class="page-sub">What feels natural in the moment isn't always what helps.</p>
+
+      <p style="margin-top:16px;margin-bottom:20px;">When your child is screaming, crying, or completely overwhelmed, it's normal to reach for whatever might make the situation stop. Most parents have tried every reaction on this page — the problem isn't that these reactions are bad, they just don't usually help.</p>
+
+      <ul class="bullets" style="margin-bottom:14px;">
+        <li><b>Long explanations.</b> A child in the middle of a meltdown isn't ready for a lesson — they're in the feeling, not the explanation. Save the reasoning for later, when they're calm and able to listen.</li>
+        <li><b>Raising your voice.</b> When emotions are already running high, a louder voice adds fuel rather than calming things down. Speaking more quietly can be surprisingly effective.</li>
+        <li><b>Bribing.</b> Offering a treat or reward may stop the meltdown in the moment, but it can make future meltdowns harder to manage.</li>
+        <li><b>Telling them they're fine.</b> Telling a child they're fine rarely helps when they don't feel fine. Instead, try acknowledging what happened: "You really wanted that." "That was disappointing."</li>
+        <li><b>Giving in.</b> If a meltdown regularly changes the answer, children quickly learn that the meltdown works. You can acknowledge the feeling, hold the boundary, and stay warm at the same time.</li>
+      </ul>
+
+      <div class="figband" style="height:1.7in;margin-bottom:16px;">
+        <img src="uploads/worse-candy2.png" alt="Hands holding wrapped candy" style="width:100%;height:100%;object-fit:cover;object-position:50% 65%;display:block;">
+      </div>
+
+      <div class="callout">
+        <span class="co-lab">A helpful thing to remember</span>
+        <p>Acknowledging a feeling doesn't mean giving in. You can say, "I know you're upset. The answer is still no." <span style="color:var(--terra);">Both can be true at the same time.</span></p>
+      </div>
+
+    </div>
+    <div class="foot">
+      <span class="brandmark">The Toddler Meltdown Field Guide</span>
+      <span class="foot-rule"></span>
+      <span class="pageno">05</span>
+    </div>
+  </section>
+
+  <!-- ============ PAGE 6 — IN THE MOMENT (Section 04) ============ -->
+  <section class="sheet" data-screen-label="What to do in the moment">
+    <div class="pad">
+      <div class="sec-label">
+        <span class="dot"></span>
+        <span class="txt">Section Four</span>
+        <span class="ln"></span>
+      </div>
+      <h2 class="page-title">What to do in the moment</h2>
+      <p class="page-sub">When emotions are running high, keep it simple.</p>
+
+      <div class="moment-layout">
+        <div class="moment-text">
+          <p style="margin-bottom:20px;">You don't need the perfect words or a perfect response. Your job is to help your child get through the moment safely.</p>
+
+          <div class="steps">
+            <div class="step"><div class="n">1</div><div class="b"><h3>Take a breath first</h3><p>You can't help your child through a big feeling while you're caught up in one too. Take one slow breath first.</p></div></div>
+            <div class="step"><div class="n">2</div><div class="b"><h3>Get close and stay calm</h3><p>Get down to their level and speak quietly. Children's nervous systems take cues from ours — your calm signals safety.</p></div></div>
+            <div class="step"><div class="n">3</div><div class="b"><h3>Name what you see</h3><p>Keep it simple — you don't need to solve the problem, just acknowledge what happened. <span class="ex">"You wanted to keep playing." "You're really upset."</span></p></div></div>
+            <div class="step"><div class="n">4</div><div class="b"><h3>Offer comfort</h3><p>Some children want a hug, some want space — follow their lead. Sometimes a hand on their back or sitting quietly beside them is enough.</p></div></div>
+            <div class="step"><div class="n">5</div><div class="b"><h3>Keep your words short</h3><p>A meltdown is not the time for explanations. Simple is better: <span class="ex">"I'm here." "You're safe." "I've got you."</span></p></div></div>
+            <div class="step"><div class="n">6</div><div class="b"><h3>Give it time</h3><p>Meltdowns end, and you don't need to rush them. Sometimes the most helpful thing you can do is stay nearby and wait.</p></div></div>
+          </div>
+        </div>
+
+        <div class="moment-image figband">
+          <img src="uploads/moment-breath.png" alt="Parent standing with eyes closed, hand on chest, taking a deep breath" style="width:100%;height:100%;object-fit:cover;object-position:50% 30%;display:block;">
+        </div>
+      </div>
+    </div>
+    <div class="foot">
+      <span class="brandmark">The Toddler Meltdown Field Guide</span>
+      <span class="foot-rule"></span>
+      <span class="pageno">06</span>
+    </div>
+  </section>
+
+  <!-- ============ PAGE 7 — WHAT TO SAY (Section 05) ============ -->
+  <section class="sheet" data-screen-label="What to say">
+    <div class="pad">
+      <div class="sec-label">
+        <span class="dot"></span>
+        <span class="txt">Section Five</span>
+        <span class="ln"></span>
+      </div>
+      <h2 class="page-title">What to say</h2>
+      <p class="page-sub">You don't need the perfect words.</p>
+
+      <div class="figband" style="margin-top:14px;margin-bottom:16px;height:1.4in;">
+        <img src="uploads/say-windowsill.png" alt="A toy bunny and bear sitting together on a windowsill" style="width:100%;height:100%;object-fit:cover;object-position:50% 65%;display:block;">
+      </div>
+
+      <p style="margin-bottom:14px;">When a child is upset, it's easy to worry about saying the wrong thing. Your tone matters more than the exact words you choose.</p>
+
+      <div class="say-grid">
+        <div class="say-cell">
+          <div class="lab">When they're starting to get upset</div>
+          <span class="quote-line">"I can see you're getting frustrated."</span>
+          <span class="quote-line">"This feels really hard right now."</span>
+          <span class="quote-line">"I'm right here."</span>
+        </div>
+        <div class="say-cell">
+          <div class="lab">When you've said no</div>
+          <span class="quote-line">"I know you really wanted that."</span>
+          <span class="quote-line">"It's hard when the answer is no."</span>
+          <span class="quote-line">"It's okay to feel upset."</span>
+        </div>
+        <div class="say-cell">
+          <div class="lab">When they're in full meltdown</div>
+          <span class="quote-line">"You're safe."</span>
+          <span class="quote-line">"I'm here."</span>
+          <span class="quote-line">"I've got you."</span>
+          <span class="quote-line">"I'm not going anywhere."</span>
+        </div>
+        <div class="say-cell">
+          <div class="lab">If they've hit or hurt you</div>
+          <span class="quote-line">"I won't let you hurt me."</span>
+          <span class="quote-line">"I'm moving back for a moment."</span>
+          <span class="quote-line">"I'm still here."</span>
+        </div>
+        <div class="say-cell">
+          <div class="lab">When they're calming down</div>
+          <span class="quote-line">"That was a lot."</span>
+          <span class="quote-line">"You're okay."</span>
+          <span class="quote-line">"Come here."</span>
+        </div>
+        <div class="say-cell">
+          <div class="lab">When it's time to transition</div>
+          <span class="quote-line">"I know it's hard to stop."</span>
+          <span class="quote-line">"Five more minutes, then we go."</span>
+          <span class="quote-line">"I'll help you find a stopping point."</span>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top:20px;">
+        <span class="co-lab">A helpful thing to remember</span>
+        <p>Save the conversation for later, when they're calm enough to listen. Addressing hitting during a meltdown won't get through — the thinking brain isn't available. Wait until things are calm, then keep it short and simple.</p>
+      </div>
+
+    </div>
+    <div class="foot">
+      <span class="brandmark">The Toddler Meltdown Field Guide</span>
+      <span class="foot-rule"></span>
+      <span class="pageno">07</span>
+    </div>
+  </section>
+
+  <!-- ============ PAGE 8 — AFTER (Section 06) ============ -->
+  <section class="sheet" data-screen-label="After the meltdown">
+    <div class="pad">
+      <div class="sec-label">
+        <span class="dot"></span>
+        <span class="txt">Section Six</span>
+        <span class="ln"></span>
+      </div>
+      <h2 class="page-title">After the meltdown</h2>
+      <p class="page-sub">What happens after matters too.</p>
+
+      <p style="margin-bottom:20px;">A meltdown can be exhausting for everyone involved. Once the crying has stopped, it can be tempting to jump straight into a lesson or conversation. Start with connection instead.</p>
+
+      <ul class="bullets" style="margin-bottom:16px;">
+        <li><b>Wait until they're calm.</b> Give them time to settle before talking about what happened. Look for relaxed body language, eye contact, or them coming back to you on their own — just because the crying has stopped doesn't mean they're ready to talk.</li>
+        <li><b>Reconnect first.</b> A hug, a cuddle on the couch, a glass of water, or simply sitting together quietly can help. Focus on reconnecting before discussing what happened.</li>
+        <li><b>Reflect later.</b> When they're ready, keep it short: <i>"That was a hard moment." "I'm here now."</i> You don't need a long conversation.</li>
+        <li><b>Be gentle afterward.</b> A meltdown is a sign a child was overwhelmed, not a sign they're a bad child. Criticism and shame rarely help — focus on helping them learn, not making them feel guilty.</li>
+        <li><b>If you lost your cool,</b> repair matters more than perfection: <i>"I raised my voice and I shouldn't have. I'm sorry."</i></li>
+      </ul>
+
+      <div class="callout" style="margin-bottom:16px;">
+        <span class="co-lab">A helpful thing to remember</span>
+        <p>No parent handles every meltdown perfectly. What children remember most is what happens afterward. <span style="color:var(--terra);">Reconnect. Repair. Move forward.</span></p>
+      </div>
+
+      <div class="figband" style="height:1.9in;">
+        <img src="uploads/after-hands.png" alt="Close-up of a parent's hand holding a toddler's hand" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;">
+      </div>
+    </div>
+    <div class="foot">
+      <span class="brandmark">The Toddler Meltdown Field Guide</span>
+      <span class="foot-rule"></span>
+      <span class="pageno">08</span>
+    </div>
+  </section>
+
+  <!-- ============ PAGE 9 — PREVENTION (Section 07) ============ -->
+  <section class="sheet" data-screen-label="Prevention">
+    <div class="pad">
+      <div class="sec-label">
+        <span class="dot"></span>
+        <span class="txt">Section Seven</span>
+        <span class="ln"></span>
+      </div>
+      <h2 class="page-title">Prevention</h2>
+      <p class="page-sub">You can't eliminate meltdowns — but you can make them less frequent.</p>
+
+      <div class="figband" style="margin-top:14px;margin-bottom:16px;height:1.9in;">
+        <img src="uploads/prevention-shoes.png" alt="Three pairs of toddler shoes lined up neatly by the door" style="width:100%;height:100%;object-fit:cover;object-position:50% 50%;display:block;">
+      </div>
+
+      <p style="margin-bottom:20px;">Toddlers have big feelings and very little experience managing them. That's part of growing up. A few small habits can make hard moments less frequent and easier to manage.</p>
+
+      <ul class="bullets" style="margin-bottom:16px;">
+        <li><b>Keep your expectations realistic.</b> Toddlers get hungry, get tired, struggle with sharing, and melt down over things that seem small — that's not a sign you're doing something wrong. It's part of being a toddler.</li>
+        <li><b>Protect sleep and meals.</b> Tired and hungry children have a much harder time coping with frustration. Sleep and meals won't prevent every meltdown, but they make a bigger difference than most parents realize.</li>
+        <li><b>Create predictable routines.</b> Toddlers feel more secure when they know what to expect. Regular mealtimes, bedtime routines, and a consistent rhythm to the day help.</li>
+        <li><b>Give transition warnings.</b> <i>"Five more minutes, then we're leaving."</i> Advance notice helps children prepare for what's coming next.</li>
+        <li><b>Offer small choices.</b> <i>"Red cup or blue cup?" "Do you want to walk or hold my hand?"</i> Small choices give a sense of independence without changing the boundary.</li>
+        <li><b>Build in downtime.</b> Busy days can be exciting, but exhausting too. After a crowded party, a long outing, or a busy morning, a little quiet time can go a long way.</li>
+      </ul>
+
+      <div class="callout">
+        <span class="co-lab">A helpful thing to remember</span>
+        <p>Prevention isn't about avoiding every meltdown. <span style="color:var(--terra);">It's about making hard moments a little less frequent and a little easier to manage.</span></p>
+      </div>
+    </div>
+    <div class="foot">
+      <span class="brandmark">The Toddler Meltdown Field Guide</span>
+      <span class="foot-rule"></span>
+      <span class="pageno">09</span>
+    </div>
+  </section>
+
+  <!-- ============ PAGE 10 — A FINAL WORD ============ -->
+  <section class="sheet" data-screen-label="A final word">
+    <div class="pad">
+      <div class="sec-label">
+        <span class="dot"></span>
+        <span class="txt">A Final Word</span>
+        <span class="ln"></span>
+      </div>
+
+      <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;transform:translateY(-12%);">
+        <p style="font-family:var(--serif);font-size:28pt;font-weight:700;color:var(--ink);line-height:1.25;max-width:5in;margin-bottom:26px;letter-spacing:-.01em;">You've got this.</p>
+
+        <p style="font-size:13pt;line-height:1.7;color:var(--ink-soft);max-width:4.6in;margin-bottom:26px;">There will still be hard days —<br>moments when you lose patience<br>or wish you'd handled things differently.<br>That doesn't mean you failed. It means you're human. What matters is what happens next:<br>you can reconnect, repair, and try again.</p>
+
+        <p style="font-family:var(--serif);font-size:15pt;font-style:italic;color:var(--terra);line-height:1.5;max-width:5.6in;">One difficult moment doesn't define your child&nbsp;—<br>and it doesn't define you either.</p>
+      </div>
+    </div>
+    <div class="foot">
+      <span class="brandmark">The Toddler Meltdown Field Guide</span>
+      <span class="foot-rule"></span>
+      <span class="pageno">10</span>
+    </div>
+  </section>
+
+  <!-- ============ PAGE 11 — FRIDGE CHEAT SHEET ============ -->
+  <section class="sheet cheat" data-screen-label="Fridge cheat sheet">
+    <div class="pad">
+      <div class="cheat-head">
+        <div class="eyebrow">Quick reference</div>
+        <h2>The Meltdown Cheat Sheet</h2>
+        <div class="pin">✂  Print me &amp; stick me on the fridge</div>
+      </div>
+
+      <div class="cheat-grid">
+        <div class="cbox moment">
+          <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 6"/></svg></div><h3>Respond</h3></div>
+          <ol>
+            <li>Stop and take a deep breath before you respond.</li>
+            <li>Get down low and move in close to them.</li>
+            <li>Keep your own voice and body calm.</li>
+            <li>Use short, simple words — they can't process much right now.</li>
+            <li>Give the feeling time to move through them.</li>
+          </ol>
+        </div>
+        <div class="cbox say">
+          <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5h16v11H9l-4 3v-3H4z"/></svg></div><h3>What to say</h3></div>
+          <ul>
+            <li>"You're safe. I'm right here with you."</li>
+            <li>"I know you're upset, and that's okay."</li>
+            <li>"I know that was really disappointing."</li>
+            <li>"I'm not going anywhere — I've got you."</li>
+          </ul>
+        </div>
+        <div class="cbox avoid">
+          <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M7 7l10 10"/></svg></div><h3>What to avoid</h3></div>
+          <ul class="dotlist">
+            <li>Arguing or trying to reason with them mid-meltdown.</li>
+            <li>Lecturing them while they're still upset.</li>
+            <li>Making threats you don't intend to follow through on.</li>
+            <li>Punishing them for a feeling they can't control yet.</li>
+            <li>Asking a lot of questions before they've calmed down.</li>
+          </ul>
+        </div>
+        <div class="cbox after">
+          <div class="ch"><div class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10z"/></svg></div><h3>Afterward</h3></div>
+          <ul class="dotlist">
+            <li>Reconnect with them before you do anything else.</li>
+            <li>Save the reflecting and talking for once everyone is calm.</li>
+            <li>Repair the moment together if you need to.</li>
+            <li>There's no shame in the meltdown itself.</li>
+            <li>Move forward without dwelling on it.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div style="flex:1;display:flex;flex-direction:column;justify-content:center;">
+        <div class="dot-rule" style="margin:0 0 28px;"><span class="d"></span></div>
+        <p style="font-family:var(--serif);font-size:13pt;font-style:italic;text-align:center;color:var(--ink);line-height:1.55;max-width:5.5in;margin:0 auto;">Meltdowns will still happen. You'll have moments where you don't get it right. That's not failure, that's parenting. What makes the difference is knowing what to do next, and doing it again.<br>You just need to keep showing up.</p>
+
+        <div class="cheat-foot">
+          <div class="bn"><span class="dot"></span>Parent Field Guide</div>
+          <div class="title">The Toddler Meltdown Field Guide</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+</div>
+
+<script>
+  (function(){
+    var pages = document.getElementById('pages');
+    function fit(){
+      var avail = window.innerWidth - 56;
+      var pageW = 8.5 * 96;
+      var scale = Math.min(1, avail / pageW);
+      pages.style.transform = 'scale(' + scale + ')';
+      var realH = pages.scrollHeight;
+      pages.style.marginBottom = (realH * scale - realH) + 'px';
+    }
+    window.addEventListener('resize', fit);
+    window.addEventListener('load', fit);
+    fit();
+  })();
+</script>
+
+</body>
+</html>
