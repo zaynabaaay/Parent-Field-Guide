@@ -12,6 +12,9 @@ body {
   position: relative;
   width: 640px;
   height: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: radial-gradient(circle at 18% 12%, #f3efe6 0%, #e7e0d2 45%, #ddd4c2 100%);
   overflow: hidden;
   box-shadow: 0 30px 60px rgba(0,0,0,0.15);
@@ -25,40 +28,11 @@ body {
   z-index: 5;
 }
 
-/* Leaf, top-left */
-.leaf {
-  position: absolute;
-  top: -20px;
-  left: -10px;
-  width: 160px;
-  height: 180px;
-  transform: rotate(-10deg);
-  opacity: 0.9;
-  z-index: 1;
-}
-
-/* Rattan placemat, top-right */
-.rattan {
-  position: absolute;
-  top: -60px;
-  right: -60px;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  background:
-    repeating-conic-gradient(from 0deg, #c9a874 0deg 6deg, #b8945f 6deg 12deg);
-  box-shadow: inset 0 0 30px rgba(90, 60, 20, 0.35), 0 10px 20px rgba(0,0,0,0.1);
-  z-index: 1;
-}
-
 /* Books */
 .books {
-  position: absolute;
-  left: 50%;
-  bottom: 230px;
+  position: relative;
   width: 0;
   height: 0;
-  z-index: 3;
 }
 
 .book {
@@ -92,65 +66,21 @@ body {
 
 .book-left {
   left: -195px;
-  bottom: 0px;
+  bottom: -110px;
   transform: rotate(-16deg);
   z-index: 1;
 }
 
 .book-center {
   left: -75px;
-  bottom: 14px;
+  bottom: -96px;
   transform: rotate(0deg);
   z-index: 3;
 }
 
 .book-right {
   left: 45px;
-  bottom: -2px;
+  bottom: -112px;
   transform: rotate(13deg) skewY(3deg);
   z-index: 2;
-}
-
-/* Beige fabric drape at bottom */
-.fabric {
-  position: absolute;
-  left: -20px;
-  right: -20px;
-  bottom: -40px;
-  height: 220px;
-  background: linear-gradient(180deg, #d8cbb3 0%, #cdbfa0 100%);
-  border-radius: 50% 50% 0 0 / 30px 30px 0 0;
-  box-shadow: inset 0 12px 25px rgba(120, 100, 70, 0.18);
-  z-index: 2;
-}
-
-.fabric::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background:
-    repeating-linear-gradient(
-      96deg,
-      rgba(120,100,70,0.10) 0px,
-      rgba(120,100,70,0.10) 3px,
-      transparent 3px,
-      transparent 14px
-    ),
-    repeating-linear-gradient(
-      84deg,
-      rgba(255,255,255,0.10) 0px,
-      rgba(255,255,255,0.10) 2px,
-      transparent 2px,
-      transparent 16px
-    );
-}
-
-/* Wooden toy car, bottom-right */
-.toy-car {
-  position: absolute;
-  bottom: 30px;
-  right: 50px;
-  width: 110px;
-  z-index: 4;
-  filter: drop-shadow(2px 6px 4px rgba(0,0,0,0.25));
 }
