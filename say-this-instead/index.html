@@ -99,27 +99,32 @@
     flex:1; width:100%; min-height:0;
     display:flex; flex-direction:column; align-items:center;
     justify-content:center; gap:0.22in;
-    padding-bottom:0.75in;
+    padding-bottom:0.2in;
   }
 
   .cover-eyebrow{ text-align:center; }
   .cover-eyebrow .e-top{
-    font-family:"Playfair Display",serif; font-style:italic; font-weight:400;
-    font-size:13px; color:var(--terra-deep); margin-bottom:5px;
+    font-family:"Jost",sans-serif; font-weight:500;
+    font-size:9.5px; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--grey); margin-bottom:6px;
   }
   .cover-eyebrow .e-bottom{
     font-family:"Jost",sans-serif; font-weight:700;
     font-size:9.5px; letter-spacing:0.16em; text-transform:uppercase;
-    color:var(--grey);
+    color:var(--ink-soft);
   }
   .cover-eyebrow .e-bottom .sep{ color:var(--terra); margin:0 6px; }
 
   .cover h1{
     font-family:"Playfair Display",serif; font-weight:700;
-    font-size:62px; line-height:0.95; letter-spacing:-0.02em;
+    font-size:74px; line-height:0.95; letter-spacing:-0.02em;
     color:var(--sage-deep); text-align:center; margin:0;
   }
   .cover h1 em{ color:var(--terra-deep); font-style:italic; }
+  .cover h1 .leaf{
+    display:inline-block; width:22px; height:22px;
+    margin-left:6px; vertical-align:middle; transform:translateY(-6px);
+  }
 
   .cover-sub{
     font-family:"Jost",sans-serif; font-weight:700;
@@ -128,22 +133,20 @@
     margin:0; max-width:5in;
   }
 
-  .cover-hero{ position:relative; margin-top:4px; }
+  .cover-hero{ position:relative; margin-top:10px; }
   .cover-hero img{
-    width:5in; height:2.95in; object-fit:cover;
+    width:5.3in; height:3.05in; object-fit:cover;
     border-radius:14px; display:block;
     box-shadow:0 30px 50px -10px rgba(43,34,24,0.32), 0 10px 20px rgba(43,34,24,0.14);
   }
   .cover-badge{
-    position:absolute; top:-0.32in; left:-0.34in;
+    position:absolute; top:-0.28in; left:-0.3in;
     width:1.3in; height:1.3in; border-radius:50%;
     background:var(--paper); border:1px solid var(--grey-line);
     display:flex; align-items:center; justify-content:center;
     text-align:center; padding:0.14in;
     box-shadow:0 12px 24px rgba(43,34,24,0.12);
-    transform:rotate(-8deg);
   }
-  .cover-badge .b-inner{ transform:rotate(8deg); }
   .cover-badge .b-top{
     font-family:"Jost",sans-serif; font-weight:600;
     font-size:9px; letter-spacing:0.1em; text-transform:uppercase;
@@ -156,11 +159,11 @@
 
   .cover-features{
     display:grid; grid-template-columns:1fr 1fr 1fr;
-    gap:18px; width:100%; max-width:6in; margin-top:6px;
+    gap:18px; width:100%; max-width:6in; margin-top:14px;
   }
   .cover-feature{ text-align:center; padding:0 6px; }
   .cover-feature .f-icon{
-    width:30px; height:30px; margin:0 auto 8px;
+    width:26px; height:26px; margin:0 auto 8px;
     display:flex; align-items:center; justify-content:center;
   }
   .cover-feature .f-label{
@@ -170,17 +173,6 @@
   }
   .cover-feature .f-text{
     font-size:9.5px; line-height:1.4; color:var(--grey);
-  }
-
-  .cover-bottombar{
-    position:absolute; left:0; right:0; bottom:0;
-    height:0.62in; background:var(--sage-deep);
-    display:flex; align-items:center; justify-content:center;
-  }
-  .cover-bottombar span{
-    font-family:"Jost",sans-serif; font-weight:700;
-    font-size:10.5px; letter-spacing:0.14em; text-transform:uppercase;
-    color:#FBF8F2;
   }
 
   /* ==================== NOTE PAGE ==================== */
@@ -378,7 +370,7 @@
           <p class="e-bottom">Stronger Connections <span class="sep">•</span> Calmer Moments <span class="sep">•</span> Confident Kids</p>
         </div>
 
-        <h1>Say This<br><em>Instead</em></h1>
+        <h1>Say This<br><em>Instead</em><svg class="leaf" viewBox="0 0 24 24" fill="none" stroke="#9E3D22" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20c0-7 5-14 16-16-2 11-9 16-16 16z"/><path d="M4 20c3-4 7-7 12-9"/></svg></h1>
 
         <p class="cover-sub">Simple Words. Powerful Connections.</p>
 
@@ -417,8 +409,6 @@
         </div>
       </div>
     </div>
-
-    <div class="cover-bottombar"><span>Words That Support. Connections That Grow.</span></div>
   </section>
 
   <!-- ============== PAGE 2 — NOTE TO PARENT ============== -->
